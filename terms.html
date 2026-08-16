@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Mr. Lander</title>
+    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/34387c33-2226-4fbe-8b68-bd10ae19096f.png?auth_key=1886818141-ae1f27bd936447008947aeca08b22983-0-2feffe771a736932241c62f646c8a3b3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Custom Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-gunmetal: #0c0f12;
+            --bg-card: rgba(12, 15, 18, 0.7);
+            --cyan: #33e0f0;
+            --cyan-dim: rgba(51, 224, 240, 0.1);
+            --cyan-glow: rgba(51, 224, 240, 0.4);
+            --bronze: #ffffff;
+            --chrome: #c9cfd4;
+            --white: #ffffff;
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* Interactive Cybereye Cursor */
+        @media (hover: hover) and (pointer: fine) {
+            * { cursor: none !important; }
+        }
+
+        #cursor-pupil, #cursor-eye-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999;
+            will-change: transform;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #cursor-pupil svg, #cursor-eye-outline svg {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: visible;
+        }
+
+        @media (hover: none) {
+            #cursor-pupil, #cursor-eye-outline { display: none !important; }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-gunmetal);
+            color: var(--chrome);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Stationary Background Layer */
+        #parallax-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-image: url('https://z-cdn-media.chatglm.cn/files/cf99b423-1af8-4f50-a12e-edf3c377f592.png?auth_key=1886813139-98ab1fcca0914bd18dab1413e944a47b-0-bea144ff9e1bbe26b50f609a3abc4668');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); color: var(--white); line-height: 1.3; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 3rem; margin-bottom: 1.5rem; color: var(--cyan); border-bottom: 1px solid rgba(51, 224, 240, 0.2); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--white); }
+        p { margin-bottom: 1rem; }
+        a { color: var(--cyan); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--white); }
+        strong { color: var(--white); font-weight: 600; }
+        ul { margin-bottom: 1.5rem; padding-left: 1.5rem; list-style: none; }
+        li { margin-bottom: 0.8rem; position: relative; padding-left: 1.2rem; }
+        li::before {
+            content: '•';
+            color: var(--cyan);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        /* Layout */
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+        section { padding: 12rem 0 6rem; position: relative; }
+        
+        /* Glass Card */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 224, 240, 0.15);
+            border-radius: 12px;
+            padding: 3rem;
+        }
+        
+        .updated-date {
+            font-family: var(--font-head);
+            color: var(--chrome);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--chrome);
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--cyan);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1.5rem 0;
+            background: rgba(12, 15, 18, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(51, 224, 240, 0.1);
+        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo-link { text-decoration: none; display: inline-flex; }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo-area img { height: 40px; filter: drop-shadow(0 0 8px var(--cyan-glow)); }
+        
+        .logo-text {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #9e9e9e 0%, #ffffff 20%, #9e9e9e 40%, #ffffff 60%, #9e9e9e 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 3s linear infinite;
+        }
+        @keyframes shineText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .logo-sub { font-size: 0.7rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; display: block; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(51, 224, 240, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer-copyright {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 10rem 0 4rem; }
+            .glass-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive Cursor Elements -->
+    <div id="cursor-pupil">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="6" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <circle cx="20" cy="20" r="2.5" fill="#33e0f0"/>
+        </svg>
+    </div>
+    <div id="cursor-eye-outline">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8 C8 8 2 20 2 20 C2 20 8 32 20 32 C32 32 38 20 38 20 C38 20 32 8 20 8 Z" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <path d="M12 20 L2 20" stroke="#33e0f0" stroke-width="1.5"/>
+            <path d="M28 20 L38 20" stroke="#33e0f0" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <!-- Stationary Background -->
+    <div id="parallax-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo-link">
+                <div class="logo-area">
+                    <img src="https://z-cdn-media.chatglm.cn/files/34387c33-2226-4fbe-8b68-bd10ae19096f.png?auth_key=1886818141-ae1f27bd936447008947aeca08b22983-0-2feffe771a736932241c62f646c8a3b3" alt="Mr. Lander Logo">
+                    <div>
+                        <div class="logo-text">MR. LANDER</div>
+                        <div class="logo-sub">The Business Visibility Specialist</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Terms of Service Content -->
+    <section id="terms-of-service">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="glass-card">
+                <h1>Terms of Service</h1>
+                <span class="updated-date"><strong>Last Updated:</strong> August 16, 2026</span>
+                
+                <p>These Terms of Service (“Terms”) govern your use of the services provided by Mr. Lander (“Mr. Lander,” “we,” “us,” or “our”).</p>
+                <p>By purchasing or using a Mr. Lander service, you agree to these Terms. If you do not agree to these Terms, you should not purchase or use our services.</p>
+
+                <h2>1. Our Service</h2>
+                <p>Mr. Lander provides website and online business visibility services primarily for U.S.-based businesses.</p>
+                <p>Depending on the plan selected, services may include:</p>
+                <ul>
+                    <li>A professional, mobile-friendly landing page</li>
+                    <li>Website hosting</li>
+                    <li>Website maintenance</li>
+                    <li>Website security and related infrastructure</li>
+                    <li>Domain registration and management</li>
+                    <li>Assistance with Google Business Profile management</li>
+                    <li>Ongoing content updates</li>
+                    <li>Monthly analytics reporting</li>
+                    <li>Other services specifically described in your service agreement or plan</li>
+                </ul>
+                <p>The exact services included are determined by the plan or service purchased.</p>
+                <p>Mr. Lander reserves the right to use templates, standardized design systems, tools, technologies, and processes in providing its services.</p>
+
+                <h2>2. Eligibility</h2>
+                <p>Mr. Lander services are intended for businesses and individuals who are at least 18 years old and legally capable of entering into a contract.</p>
+                <p>By purchasing our services, you represent that you have the authority to enter into this agreement on behalf of the business you represent, if applicable.</p>
+
+                <h2>3. Plans and Pricing</h2>
+                <p>Mr. Lander currently offers monthly and annual subscription options.</p>
+
+                <h3>Monthly Plan</h3>
+                <p>The monthly plan is <strong>$99 per month</strong> unless otherwise stated at the time of purchase.</p>
+
+                <h3>Annual Plan</h3>
+                <p>The annual plan is <strong>$1,000 per year</strong> unless otherwise stated at the time of purchase.</p>
+                <p>The annual plan provides a savings compared with twelve monthly payments.</p>
+                <p>Prices may change for future purchases or renewals. Any price change to an existing subscription will be communicated in advance as required by applicable law.</p>
+
+                <h2>4. Payment Processing</h2>
+                <p>Payments are processed through Stripe or another payment processor we may designate.</p>
+                <p>By providing payment information, you authorize the applicable payment processor to charge the payment method associated with your account according to the plan and billing schedule you selected.</p>
+                <p>Mr. Lander does not directly store complete credit card numbers.</p>
+                <p>If a payment fails, we may attempt to collect the outstanding amount, suspend services, or terminate the subscription if the balance remains unpaid.</p>
+
+                <h2>5. Cancellation</h2>
+                <p>You may cancel your monthly or annual subscription at any time.</p>
+                <p>For monthly subscriptions, cancellation stops future recurring charges. Your service remains active through the end of the billing period that has already been paid for.</p>
+                <p>Cancellation does not automatically entitle you to a refund for the current monthly billing period.</p>
+
+                <h2>6. Refunds</h2>
+                <h3>Monthly Plans</h3>
+                <p>Monthly subscription payments are <strong>non-refundable</strong>.</p>
+                <p>We do not provide partial-month refunds when a monthly subscription is cancelled.</p>
+
+                <h3>Annual Plans</h3>
+                <p>Annual subscriptions are eligible for a prorated refund if cancelled before the end of the annual term.</p>
+                <p>The refund will be based on the unused full months remaining in the annual subscription.</p>
+                <p>No refund will be provided for the portion of the annual term that has already elapsed.</p>
+                <p>Except as specifically stated above or required by applicable law, all payments are non-refundable.</p>
+
+                <h2>7. Website Updates</h2>
+                <p>Your subscription includes <strong>two content update requests per billing month</strong>.</p>
+                <p>Each update request may contain a reasonable amount of related content, including changes to:</p>
+                <ul>
+                    <li>Text</li>
+                    <li>Images</li>
+                    <li>Business information</li>
+                    <li>Services</li>
+                    <li>Contact information</li>
+                    <li>Similar existing website content</li>
+                </ul>
+                <p>The two-request allowance applies to requests, not to the number of individual words, images, or minor edits contained within a reasonable request.</p>
+                <p>Requests that require substantial redesign, new functionality, custom development, new pages, structural changes, or other work outside ordinary content updates are not included.</p>
+                <p>Unused update requests do not roll over to future months.</p>
+
+                <h2>8. Additional Work and New Pages</h2>
+                <p>New pages, major redesigns, custom functionality, integrations, custom development, or other work outside the included service may be available for an additional fee.</p>
+                <p>Any such work is subject to a separate quote or agreement.</p>
+                <p>Mr. Lander may, at its sole discretion, accept, decline, or modify a request for additional work.</p>
+                <p>Payment for additional work must be agreed upon before that work begins.</p>
+
+                <h2>9. Initial Website Development</h2>
+                <p>Mr. Lander will generally aim to have the initial landing page ready within <strong>5 business days</strong> after receiving all required information and materials from the customer.</p>
+                <p>The five-business-day timeframe is an expected turnaround time, not a guarantee.</p>
+                <p>Delays caused by incomplete information, missing materials, customer-requested changes, third-party services, domain issues, verification requirements, or circumstances outside our reasonable control may extend the timeframe.</p>
+
+                <h2>10. Customer Responsibilities</h2>
+                <p>You are responsible for providing accurate and complete information necessary to provide the services.</p>
+                <p>This may include:</p>
+                <ul>
+                    <li>Business name</li>
+                    <li>Business description</li>
+                    <li>Services</li>
+                    <li>Business location</li>
+                    <li>Contact information</li>
+                    <li>Hours</li>
+                    <li>Photographs</li>
+                    <li>Logos</li>
+                    <li>Branding materials</li>
+                    <li>Other requested business information</li>
+                </ul>
+                <p>You represent that you have the necessary rights, licenses, and permissions to provide any content, photographs, logos, trademarks, text, or other materials you submit to Mr. Lander.</p>
+                <p>You are responsible for ensuring that information displayed about your business is accurate.</p>
+
+                <h2>11. Domain Names</h2>
+                <p>Mr. Lander may purchase and manage domain names on behalf of customers as part of providing the service.</p>
+                <p>During an active subscription, Mr. Lander may manage the domain registration, DNS settings, renewal, and related technical configuration.</p>
+                <p>A domain name is separate from the Mr. Lander website itself. Payment for the Mr. Lander service does not transfer ownership of the website or its underlying design, code, templates, systems, or intellectual property to the customer.</p>
+
+                <h3>Domain Transfer After Cancellation</h3>
+                <p>Following cancellation, a customer may request transfer of a domain managed by Mr. Lander.</p>
+                <p>The request must be made within <strong>90 days of cancellation</strong>.</p>
+                <p>A <strong>$199 Domain Transfer & Handoff fee</strong> applies.</p>
+                <p>The fee covers the administrative work involved in preparing and completing the domain handoff, including reasonable transfer assistance.</p>
+                <p>The $199 fee is not a purchase price for the domain.</p>
+                <p>After the 90-day period, Mr. Lander may allow the domain registration to expire and will not be obligated to continue renewing or managing the domain.</p>
+                <p>Customers are responsible for requesting a transfer in sufficient time to avoid expiration.</p>
+                <p>Domain transfers are subject to the rules, requirements, and restrictions of the applicable domain registrar and registry.</p>
+                <p>Mr. Lander cannot guarantee that a transfer will be completed by a particular date or that a domain will remain available after expiration.</p>
+
+                <h2>12. Website Ownership</h2>
+                <p>The Mr. Lander website, including its design, layout, templates, code, structure, systems, and other underlying materials, remains the property of Mr. Lander unless otherwise agreed in writing.</p>
+                <p>Your subscription provides you with the right to use the website as part of the active Mr. Lander service.</p>
+                <p>Cancellation of the service does not transfer ownership of the website to you.</p>
+                <p>After cancellation, the website may be taken offline following the end of the applicable paid service period.</p>
+                <p>Mr. Lander may offer a separate website transfer, redesign, export, or other transition service at its discretion and for an additional fee.</p>
+
+                <h2>13. Google Business Profile</h2>
+                <p>Mr. Lander may assist customers with establishing, optimizing, or managing their Google Business Profile.</p>
+                <p>The Google Business Profile belongs to the customer's business and remains subject to Google's terms, policies, verification requirements, and decisions.</p>
+                <p>Mr. Lander does not guarantee approval, verification, ranking, visibility, reviews, or continued availability of a Google Business Profile.</p>
+                <p>Customers are responsible for providing accurate business information and completing any verification or authorization steps required by Google.</p>
+                <p>Mr. Lander may request that the customer add Mr. Lander as a manager or authorized user rather than requesting ownership of the customer's Google Business Profile.</p>
+
+                <h2>14. Third-Party Services</h2>
+                <p>Mr. Lander relies on third-party services and infrastructure to provide portions of its services.</p>
+                <p>These may include hosting providers, payment processors, email providers, analytics services, Google services, domain registrars, and other technology providers.</p>
+                <p>Third-party services may experience outages, changes, errors, policy changes, security incidents, or other problems outside our control.</p>
+                <p>Mr. Lander is not responsible for the independent actions, availability, policies, or performance of third-party services.</p>
+                <p>Your use of third-party services may also be subject to their separate terms and policies.</p>
+
+                <h2>15. Analytics and Performance</h2>
+                <p>Mr. Lander may provide monthly analytics reports containing information about website traffic, visibility, or other available performance indicators.</p>
+                <p>Analytics are provided for informational purposes.</p>
+                <p>Mr. Lander does not guarantee any particular level of:</p>
+                <ul>
+                    <li>Website traffic</li>
+                    <li>Search rankings</li>
+                    <li>Google visibility</li>
+                    <li>Calls</li>
+                    <li>Leads</li>
+                    <li>Reviews</li>
+                    <li>Customer inquiries</li>
+                    <li>Sales</li>
+                    <li>Revenue</li>
+                    <li>Business growth</li>
+                </ul>
+                <p>Online visibility depends on numerous factors outside our control, including search-engine algorithms, competition, customer behavior, market conditions, business reputation, reviews, and third-party platforms.</p>
+
+                <h2>16. Intellectual Property</h2>
+                <p>Mr. Lander retains ownership of its proprietary systems, templates, design frameworks, processes, code, tools, methods, branding, and other intellectual property.</p>
+                <p>Customer-provided materials remain the property of the customer or their respective owners.</p>
+                <p>By providing materials to Mr. Lander, you grant us the permission necessary to use, reproduce, modify, publish, display, and otherwise process those materials solely as reasonably necessary to provide the requested services.</p>
+                <p>Nothing in these Terms transfers ownership of customer trademarks, logos, photographs, or other customer-owned materials to Mr. Lander.</p>
+
+                <h2>17. Customer Content and Legal Compliance</h2>
+                <p>You are responsible for the legality, accuracy, and appropriateness of content you provide for publication.</p>
+                <p>You may not provide content that:</p>
+                <ul>
+                    <li>Violates applicable law</li>
+                    <li>Infringes another person's intellectual property rights</li>
+                    <li>Contains fraudulent or misleading claims</li>
+                    <li>Is defamatory or unlawful</li>
+                    <li>Violates applicable advertising or industry regulations</li>
+                    <li>Infringes the rights of another person or business</li>
+                </ul>
+                <p>Mr. Lander may refuse to publish or may remove content that we reasonably believe violates these Terms, applicable law, or the policies of a third-party platform.</p>
+
+                <h2>18. Service Suspension or Termination</h2>
+                <p>Mr. Lander may suspend or terminate services if:</p>
+                <ul>
+                    <li>Payments remain unpaid</li>
+                    <li>You materially violate these Terms</li>
+                    <li>You provide unlawful or infringing content</li>
+                    <li>Your use of the service creates a security risk</li>
+                    <li>You engage in abusive, fraudulent, or harmful conduct</li>
+                    <li>Continued service would create legal or operational risk</li>
+                </ul>
+                <p>Where reasonably possible, we may provide notice and an opportunity to correct the issue before termination.</p>
+                <p>Termination does not eliminate amounts already owed.</p>
+
+                <h2>19. No Guaranteed Results</h2>
+                <p>Mr. Lander provides website and online visibility services, not guaranteed business outcomes.</p>
+                <p>We make no guarantee that our services will result in:</p>
+                <ul>
+                    <li>Higher search rankings</li>
+                    <li>Increased website traffic</li>
+                    <li>More calls</li>
+                    <li>More leads</li>
+                    <li>More customers</li>
+                    <li>Increased revenue</li>
+                    <li>More reviews</li>
+                    <li>Improved Google Business Profile rankings</li>
+                    <li>Specific search-engine placement</li>
+                </ul>
+                <p>Any examples, estimates, projections, testimonials, or descriptions of potential results should not be interpreted as guarantees.</p>
+
+                <h2>20. Disclaimer of Warranties</h2>
+                <p>To the maximum extent permitted by applicable law, the services are provided on an “as is” and “as available” basis.</p>
+                <p>We do not guarantee that the services will be uninterrupted, error-free, completely secure, or available at all times.</p>
+                <p>We do not guarantee the continued availability or functionality of third-party platforms, search engines, hosting services, domain registries, payment processors, Google services, or other external systems.</p>
+                <p>Nothing in these Terms excludes any warranty or right that cannot legally be excluded.</p>
+
+                <h2>21. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, Mr. Lander and its owners, employees, contractors, and service providers will not be liable for indirect, incidental, consequential, special, exemplary, or punitive damages arising from or related to the services.</p>
+                <p>To the maximum extent permitted by law, our total liability arising from or related to the services will not exceed the amount you paid to Mr. Lander for the services during the <strong>12 months immediately preceding the event giving rise to the claim</strong>.</p>
+                <p>This limitation applies to claims arising from contract, tort, negligence, or other legal theory, except where prohibited by applicable law.</p>
+
+                <h2>22. Indemnification</h2>
+                <p>To the maximum extent permitted by law, you agree to defend, indemnify, and hold harmless Mr. Lander and its owners, employees, contractors, and service providers from claims, damages, liabilities, losses, costs, and expenses arising from:</p>
+                <ul>
+                    <li>Content or materials you provide</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of applicable law</li>
+                    <li>Your violation of another person's rights</li>
+                    <li>Your misuse of the services</li>
+                    <li>Your unauthorized use of third-party accounts or services</li>
+                </ul>
+                <p>This provision does not apply to the extent that a claim results from Mr. Lander's own unlawful conduct or gross negligence where such limitation is prohibited by applicable law.</p>
+
+                <h2>23. Force Majeure</h2>
+                <p>Mr. Lander will not be responsible for delays or failures caused by circumstances beyond our reasonable control, including natural disasters, acts of government, internet or infrastructure failures, widespread outages, cyberattacks, labor disputes, third-party service failures, or other events beyond our reasonable control.</p>
+
+                <h2>24. Changes to Services</h2>
+                <p>We may modify, improve, replace, or discontinue portions of the services from time to time.</p>
+                <p>We will make reasonable efforts to maintain the core services included in an active subscription.</p>
+                <p>Material changes affecting an existing customer's subscription will be communicated where appropriate.</p>
+
+                <h2>25. Changes to These Terms</h2>
+                <p>We may update these Terms from time to time.</p>
+                <p>When we make changes, we will update the “Last Updated” date at the top of this page.</p>
+                <p>For material changes affecting existing customers, we may provide notice through email or another reasonable method.</p>
+                <p>Continued use of the services after the effective date of updated Terms constitutes acceptance of the revised Terms, to the extent permitted by applicable law.</p>
+
+                <h2>26. Governing Law</h2>
+                <p>These Terms are governed by the laws of the <strong>Commonwealth of Virginia</strong>, without regard to its conflict-of-law principles, except where applicable law requires otherwise.</p>
+                <p>Any dispute that cannot be resolved informally will be handled in a court of competent jurisdiction as permitted by applicable law.</p>
+
+                <h2>27. Severability</h2>
+                <p>If any provision of these Terms is found to be invalid, unlawful, or unenforceable, that provision will be enforced to the maximum extent permitted by law, and the remaining provisions will remain in full force and effect.</p>
+
+                <h2>28. Entire Agreement</h2>
+                <p>These Terms, together with any applicable service agreement, order, pricing information, or other written agreement between you and Mr. Lander, constitute the agreement between you and Mr. Lander regarding the services.</p>
+                <p>If there is a conflict between these Terms and a specific written service agreement, the specific service agreement will control to the extent of the conflict.</p>
+
+                <h2>29. Contact</h2>
+                <p>Questions regarding these Terms may be directed to:</p>
+                <p><strong>Mr. Lander</strong><br>Email: <a href="mailto:help@misterlander.com">help@misterlander.com</a></p>
+                
+                <br>
+                <p><strong>Mr. Lander</strong><br>Business Visibility Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">
+                © 2026 Mr. Lander. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Interactive Cybereye Cursor ---
+        const cursorPupil = document.getElementById('cursor-pupil');
+        const cursorOutline = document.getElementById('cursor-eye-outline');
+        
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let outlineX = mouseX;
+        let outlineY = mouseY;
+        let firstMove = true;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (firstMove) {
+                cursorPupil.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+                outlineX = mouseX;
+                outlineY = mouseY;
+                firstMove = false;
+            }
+            
+            cursorPupil.style.transform = `translate3d(${mouseX - 20}px, ${mouseY - 20}px, 0)`;
+        });
+
+        function animateCursor() {
+            outlineX += (mouseX - outlineX) * 0.2;
+            outlineY += (mouseY - outlineY) * 0.2;
+            cursorOutline.style.transform = `translate3d(${outlineX - 20}px, ${outlineY - 20}px, 0)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.addEventListener('mouseleave', () => {
+            cursorPupil.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            if (!firstMove) {
+                cursorPupil.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+            }
+        });
+
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.closest('a, button')) {
+                cursorOutline.querySelector('svg').style.transform = 'scale(1.4)';
+                cursorPupil.querySelector('svg').style.transform = 'scale(0.7)';
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.closest('a, button')) {
+                cursorOutline.querySelector('svg').style.transform = 'scale(1)';
+                cursorPupil.querySelector('svg').style.transform = 'scale(1)';
+            }
+        });
+    </script>
+</body>
+</html>

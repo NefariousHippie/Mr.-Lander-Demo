@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Mr. Lander</title>
+    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/34387c33-2226-4fbe-8b68-bd10ae19096f.png?auth_key=1886818141-ae1f27bd936447008947aeca08b22983-0-2feffe771a736932241c62f646c8a3b3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Custom Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-gunmetal: #0c0f12;
+            --bg-card: rgba(12, 15, 18, 0.7);
+            --cyan: #33e0f0;
+            --cyan-dim: rgba(51, 224, 240, 0.1);
+            --cyan-glow: rgba(51, 224, 240, 0.4);
+            --bronze: #ffffff;
+            --chrome: #c9cfd4;
+            --white: #ffffff;
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* Interactive Cybereye Cursor */
+        @media (hover: hover) and (pointer: fine) {
+            * { cursor: none !important; }
+        }
+
+        #cursor-pupil, #cursor-eye-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999;
+            will-change: transform;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #cursor-pupil svg, #cursor-eye-outline svg {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: visible;
+        }
+
+        @media (hover: none) {
+            #cursor-pupil, #cursor-eye-outline { display: none !important; }
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-gunmetal);
+            color: var(--chrome);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Stationary Background Layer */
+        #parallax-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-image: url('https://z-cdn-media.chatglm.cn/files/cf99b423-1af8-4f50-a12e-edf3c377f592.png?auth_key=1886813139-98ab1fcca0914bd18dab1413e944a47b-0-bea144ff9e1bbe26b50f609a3abc4668');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); color: var(--white); line-height: 1.3; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 3rem; margin-bottom: 1.5rem; color: var(--cyan); border-bottom: 1px solid rgba(51, 224, 240, 0.2); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--white); }
+        p { margin-bottom: 1rem; }
+        a { color: var(--cyan); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--white); }
+        strong { color: var(--white); font-weight: 600; }
+        ul { margin-bottom: 1.5rem; padding-left: 1.5rem; list-style: none; }
+        li { margin-bottom: 0.8rem; position: relative; padding-left: 1.2rem; }
+        li::before {
+            content: '•';
+            color: var(--cyan);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        /* Layout */
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+        section { padding: 12rem 0 6rem; position: relative; }
+        
+        /* Glass Card */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 224, 240, 0.15);
+            border-radius: 12px;
+            padding: 3rem;
+        }
+        
+        .updated-date {
+            font-family: var(--font-head);
+            color: var(--chrome);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--chrome);
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--cyan);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1.5rem 0;
+            background: rgba(12, 15, 18, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(51, 224, 240, 0.1);
+        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo-link { text-decoration: none; display: inline-flex; }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo-area img { height: 40px; filter: drop-shadow(0 0 8px var(--cyan-glow)); }
+        
+        .logo-text {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #9e9e9e 0%, #ffffff 20%, #9e9e9e 40%, #ffffff 60%, #9e9e9e 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 3s linear infinite;
+        }
+        @keyframes shineText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .logo-sub { font-size: 0.7rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; display: block; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(51, 224, 240, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer-copyright {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 10rem 0 4rem; }
+            .glass-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive Cursor Elements -->
+    <div id="cursor-pupil">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="6" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <circle cx="20" cy="20" r="2.5" fill="#33e0f0"/>
+        </svg>
+    </div>
+    <div id="cursor-eye-outline">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8 C8 8 2 20 2 20 C2 20 8 32 20 32 C32 32 38 20 38 20 C38 20 32 8 20 8 Z" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <path d="M12 20 L2 20" stroke="#33e0f0" stroke-width="1.5"/>
+            <path d="M28 20 L38 20" stroke="#33e0f0" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <!-- Stationary Background -->
+    <div id="parallax-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo-link">
+                <div class="logo-area">
+                    <img src="https://z-cdn-media.chatglm.cn/files/34387c33-2226-4fbe-8b68-bd10ae19096f.png?auth_key=1886818141-ae1f27bd936447008947aeca08b22983-0-2feffe771a736932241c62f646c8a3b3" alt="Mr. Lander Logo">
+                    <div>
+                        <div class="logo-text">MR. LANDER</div>
+                        <div class="logo-sub">The Business Visibility Specialist</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <section id="privacy-policy">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="glass-card">
+                <h1>Privacy Policy</h1>
+                <span class="updated-date"><strong>Last Updated:</strong> August 16, 2026</span>
+                
+                <p>Mr. Lander (“Mr. Lander,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you provide to us.</p>
+                <p>This Privacy Policy explains what information we collect, how we use it, how we may share it, and the choices available to you when you visit our website, contact us, or use our services.</p>
+                <p>Mr. Lander is a U.S.-focused service provider based in Virginia and primarily provides services to businesses.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>We may collect information that you voluntarily provide to us when you contact us, request information, become a customer, or work with us during the onboarding and service process.</p>
+                <p>This may include:</p>
+                <ul>
+                    <li>Your name</li>
+                    <li>Business name and industry</li>
+                    <li>Business location</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Information you provide in a message or inquiry</li>
+                    <li>Whether you are a new or existing customer</li>
+                    <li>Business descriptions and service information</li>
+                    <li>Business photographs, logos, and other materials you provide</li>
+                    <li>Information necessary to provide and manage our services</li>
+                </ul>
+                <p>We do not intentionally collect sensitive personal information such as Social Security numbers, driver's license numbers, health information, or similar highly sensitive information through our website.</p>
+
+                <h3>Payment Information</h3>
+                <p>Payments for Mr. Lander services are processed through Stripe. We do not directly collect or store your full credit card number or other complete payment-card credentials on our own systems.</p>
+                <p>Stripe may collect and process payment information in accordance with its own privacy policy and terms.</p>
+
+                <h2>2. Information Collected Automatically</h2>
+                <p>When you visit the Mr. Lander website, certain technical information may be collected automatically by our hosting, security, analytics, or other service providers.</p>
+                <p>This information may include:</p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type</li>
+                    <li>Device type</li>
+                    <li>Operating system</li>
+                    <li>Pages visited</li>
+                    <li>Approximate usage information</li>
+                    <li>Date and time of visits</li>
+                    <li>Referring website or page</li>
+                </ul>
+                <p>We use this information primarily to operate, secure, maintain, and improve our website and services and to understand how visitors use our website.</p>
+
+                <h2>3. Google Analytics and Other Google Services</h2>
+                <p>We use Google Analytics to help us understand website traffic and how visitors interact with our website.</p>
+                <p>We may also use Google services such as Google Search Console and Google Business Profile in connection with providing services to our customers.</p>
+                <p>These services may collect or process information in accordance with Google's own privacy policies and terms.</p>
+                <p>We do not use advertising or retargeting pixels on the Mr. Lander website at this time.</p>
+
+                <h2>4. How We Use Information</h2>
+                <p>We may use information we collect to:</p>
+                <ul>
+                    <li>Respond to inquiries and requests</li>
+                    <li>Communicate with customers</li>
+                    <li>Set up and provide Mr. Lander services</li>
+                    <li>Build, host, maintain, and manage customer websites</li>
+                    <li>Assist with Google Business Profiles and other online business services</li>
+                    <li>Process payments</li>
+                    <li>Provide analytics and reporting</li>
+                    <li>Provide customer support</li>
+                    <li>Maintain and improve our website and services</li>
+                    <li>Detect, prevent, and address security issues, fraud, or misuse</li>
+                    <li>Maintain business and transaction records</li>
+                    <li>Comply with applicable legal obligations</li>
+                    <li>Protect our rights and the security of our services</li>
+                </ul>
+                <p>We do not sell personal information.</p>
+                <p>We do not use customer information to train artificial intelligence models.</p>
+
+                <h2>5. Business Account Access</h2>
+                <p>As part of providing our services, Mr. Lander may receive authorized access to certain third-party business accounts or services on behalf of a customer.</p>
+                <p>This may include access to:</p>
+                <ul>
+                    <li>Google Business Profile</li>
+                    <li>Website or hosting services</li>
+                    <li>Domain-related services</li>
+                    <li>Analytics or search-management tools</li>
+                    <li>Other online services necessary to provide the requested service</li>
+                </ul>
+                <p>We use such access only as reasonably necessary to provide, manage, maintain, or support the services requested by the customer.</p>
+                <p>Customers remain responsible for their ownership and rights in their own third-party accounts unless otherwise agreed in writing.</p>
+
+                <h2>6. Service Providers and Third Parties</h2>
+                <p>We use third-party service providers to operate our business and provide our services.</p>
+                <p>These may include:</p>
+                <ul>
+                    <li><strong>Cloudflare</strong> — website hosting, infrastructure, security, and related services.</li>
+                    <li><strong>Stripe</strong> — payment processing.</li>
+                    <li><strong>Resend</strong> — email delivery and related email infrastructure.</li>
+                    <li><strong>Google</strong> — analytics, search-related services, Google Business Profile, and other Google services used in connection with our website or customer services.</li>
+                    <li><strong>Notion</strong> — internal business, customer, and project management.</li>
+                </ul>
+                <p>Additional service providers may be used in the future when reasonably necessary to operate our business or provide our services. We expect such providers to use information only as necessary to perform the services they provide to us.</p>
+                <p>Third-party providers have their own privacy policies and terms, which may apply to information they process.</p>
+
+                <h2>7. Email Communications</h2>
+                <p>We may use your email address to:</p>
+                <ul>
+                    <li>Respond to inquiries</li>
+                    <li>Provide requested information</li>
+                    <li>Communicate about your account or services</li>
+                    <li>Send service-related notices</li>
+                    <li>Provide customer support</li>
+                    <li>Communicate about billing or administrative matters</li>
+                </ul>
+                <p>If we begin sending marketing or promotional communications, we will provide an appropriate way to opt out of those communications where required by applicable law.</p>
+                <p>You may contact us at <a href="mailto:help@misterlander.com">help@misterlander.com</a> if you have questions about communications you receive from us.</p>
+
+                <h2>8. How Long We Keep Information</h2>
+                <p>We retain personal and business information for as long as reasonably necessary for the purposes described in this Privacy Policy, including to provide services, maintain business and transaction records, resolve disputes, enforce agreements, protect our rights, and comply with legal obligations.</p>
+                <p>The length of time information is retained may vary depending on the type of information and the reason it was collected.</p>
+                <p>When information is no longer reasonably necessary, we may delete it, anonymize it, or securely dispose of it, subject to applicable legal, contractual, or operational requirements.</p>
+
+                <h2>9. Customer Business Information</h2>
+                <p>Information provided to Mr. Lander for the purpose of building or managing a customer's online presence may be retained as reasonably necessary to provide ongoing services.</p>
+                <p>This may include business descriptions, service information, photographs, logos, contact information, website content, and related materials.</p>
+                <p>Customer business information may also remain in backups or records for a reasonable period after services end.</p>
+
+                <h2>10. Information Sharing</h2>
+                <p>We do not sell personal information.</p>
+                <p>We may share information with service providers and other third parties when reasonably necessary to:</p>
+                <ul>
+                    <li>Provide our services</li>
+                    <li>Process payments</li>
+                    <li>Host and secure websites</li>
+                    <li>Deliver email</li>
+                    <li>Provide analytics</li>
+                    <li>Manage customer projects</li>
+                    <li>Manage Google Business Profiles and other requested services</li>
+                    <li>Comply with legal requirements</li>
+                    <li>Protect our rights, property, customers, or services</li>
+                    <li>Respond to lawful requests from government authorities</li>
+                </ul>
+                <p>We may also disclose information in connection with a business transaction such as a merger, acquisition, financing, sale of assets, or similar transaction, subject to applicable law.</p>
+
+                <h2>11. Your Privacy Choices and Rights</h2>
+                <p>Depending on where you live and the laws that apply to your information, you may have rights regarding your personal information.</p>
+                <p>These may include the ability to:</p>
+                <ul>
+                    <li>Request access to personal information we maintain about you</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of personal information</li>
+                    <li>Request a copy of certain personal information</li>
+                    <li>Opt out of certain communications</li>
+                    <li>Ask questions about how your information is used</li>
+                </ul>
+                <p>To make a privacy request, contact us at:</p>
+                <p><a href="mailto:help@misterlander.com">help@misterlander.com</a></p>
+                <p>We may need to verify your identity before completing certain requests in order to protect your information from unauthorized access.</p>
+                <p>Certain information may be retained when necessary to provide a service, comply with a legal obligation, maintain business records, resolve disputes, prevent fraud or abuse, or protect our rights.</p>
+
+                <h2>12. California and Other State Privacy Laws</h2>
+                <p>Privacy rights and obligations can vary depending on the state in which an individual resides and the nature and scale of a business's data processing activities.</p>
+                <p>Mr. Lander does not sell personal information and does not use personal information for targeted advertising at this time.</p>
+                <p>Where applicable state privacy laws provide additional rights, we will process valid requests in accordance with those laws.</p>
+
+                <h2>13. Children's Privacy</h2>
+                <p>Mr. Lander's services and website are intended for businesses and adults.</p>
+                <p>We do not knowingly collect personal information from children under 13 through our website.</p>
+                <p>If you believe a child has provided personal information to us, please contact us at <a href="mailto:help@misterlander.com">help@misterlander.com</a> so that we can review and, where appropriate, delete the information.</p>
+
+                <h2>14. Data Security</h2>
+                <p>We take reasonable administrative, technical, and organizational measures designed to protect information against unauthorized access, disclosure, alteration, or destruction.</p>
+                <p>However, no method of transmitting or storing information over the Internet is completely secure, and we cannot guarantee absolute security.</p>
+                <p>You should avoid submitting highly sensitive information through website forms or ordinary email unless specifically requested and appropriate security measures are available.</p>
+
+                <h2>15. Third-Party Websites and Services</h2>
+                <p>Our website and services may contain links to or interact with third-party websites, platforms, or services.</p>
+                <p>We are not responsible for the privacy practices, security, or content of third-party services.</p>
+                <p>When you use a third-party service, that service's own privacy policy and terms may apply.</p>
+
+                <h2>16. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes to our services, technology, business practices, or legal requirements.</p>
+                <p>When we make changes, we will update the “Last Updated” date at the top of this page.</p>
+                <p>We encourage you to review this Privacy Policy periodically.</p>
+
+                <h2>17. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy, want to make a privacy request, or have concerns about how your information is handled, contact us:</p>
+                <p><strong>Mr. Lander</strong><br>Email: <a href="mailto:help@misterlander.com">help@misterlander.com</a></p>
+                
+                <br>
+                <p><strong>Mr. Lander</strong><br>Business Visibility Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">
+                © 2026 Mr. Lander. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Interactive Cybereye Cursor ---
+        const cursorPupil = document.getElementById('cursor-pupil');
+        const cursorOutline = document.getElementById('cursor-eye-outline');
+        
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let outlineX = mouseX;
+        let outlineY = mouseY;
+        let firstMove = true;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (firstMove) {
+                cursorPupil.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+                outlineX = mouseX;
+                outlineY = mouseY;
+                firstMove = false;
+            }
+            
+            cursorPupil.style.transform = `translate3d(${mouseX - 20}px, ${mouseY - 20}px, 0)`;
+        });
+
+        function animateCursor() {
+            outlineX += (mouseX - outlineX) * 0.2;
+            outlineY += (mouseY - outlineY) * 0.2;
+            cursorOutline.style.transform = `translate3d(${outlineX - 20}px, ${outlineY - 20}px, 0)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.addEventListener('mouseleave', () => {
+            cursorPupil.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            if (!firstMove) {
+                cursorPupil.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+            }
+        });
+
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.closest('a, button')) {
+                cursorOutline.querySelector('svg').style.transform = 'scale(1.4)';
+                cursorPupil.querySelector('svg').style.transform = 'scale(0.7)';
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.closest('a, button')) {
+                cursorOutline.querySelector('svg').style.transform = 'scale(1)';
+                cursorPupil.querySelector('svg').style.transform = 'scale(1)';
+            }
+        });
+    </script>
+</body>
+</html>
