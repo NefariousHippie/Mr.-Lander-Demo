@@ -4,21 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr. Lander — The Business Visibility Specialist</title>
-    <!-- Local Favicon -->
-    <link rel="icon" type="image/png" href="images/ML Favicon.png">
+    <link rel="icon" type="image/png" href="images/ml-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font Awesome for Custom Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Top Anchor -->
     <div id="top"></div>
 
-    <!-- Interactive Cursor Elements -->
     <div id="cursor-pupil">
         <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="6" fill="none" stroke="#33e0f0" stroke-width="2"/>
@@ -33,21 +28,19 @@
         </svg>
     </div>
 
-    <!-- Stationary Background -->
     <div id="parallax-bg"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="container nav-inner">
             <a href="#top" class="logo-link">
-                <div class="logo-area">
-                    <img src="images/ML Favicon.png" alt="Mr. Lander Logo">
-                    <div class="logo-text-container">
-                        <div class="logo-text">MR. LANDER</div>
-                        <div class="logo-sub">The Business Visibility Specialist</div>
-                    </div>
+                <img src="images/ml-favicon.png" alt="Mr. Lander Logo">
+                <div class="logo-text-wrap">
+                    <div class="logo-text">MR. LANDER</div>
+                    <div class="logo-sub">The Business Visibility Specialist</div>
                 </div>
             </a>
+            <div class="mobile-title">MR. LANDER</div>
+            
             <ul class="nav-links">
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#solution">Solution</a></li>
@@ -55,87 +48,80 @@
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
             <div class="nav-actions">
-                <div class="hamburger">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <a href="#contact" class="btn-primary nav-cta">
+                <a href="#contact" class="btn-primary btn-desktop">
                     <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
                 </a>
+                <div class="hamburger" role="button" aria-label="Toggle Navigation" aria-expanded="false" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
-        
-        <!-- Mobile Menu Dropdown -->
-        <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu">
             <ul class="mobile-nav-links">
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#how-it-works">Process</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#solution">The Visibility System</a></li>
-                <li><a href="#difference">The Difference</a></li>
+                <li><a href="#difference">Difference</a></li>
                 <li><a href="#who-we-serve">Who We Serve</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li class="mobile-cta-item"><a href="#contact" class="btn-primary mobile-cta">
-                    <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
-                </a></li>
             </ul>
+            <a href="#contact" class="btn-primary btn-mobile-action">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-inner">
             <div class="hero-content">
                 <h1>Let's Make You <span class="text-cyan pulse-glow">Visible.</span></h1>
-                <p style="font-size: 1.2rem; color: var(--chrome); max-width: 600px; margin-top: 1.5rem;">
+                <p class="hero-desc">
                     Professional websites and online visibility for local businesses—without the cost, complexity, or hassle of a traditional agency.
                 </p>
             </div>
             <div class="hero-image-wrapper">
                 <div class="glow-border">
-                    <img id="hero-mockup" src="images/ML Hero.png" alt="Mr. Lander Hologram">
+                    <img id="hero-mockup" src="images/ml-hero.png" alt="Mr. Lander Hologram">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section id="problem">
         <div class="container">
             <span class="section-label">The Problem</span>
-            <h2 style="text-align: center;">Why Businesses Stay <span class="text-bronze">Invisible</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Most local businesses don't have a marketing problem—they have a visibility problem. 
+            <h2 class="text-center">Why Businesses Stay <span class="text-white">Invisible</span></h2>
+            <p class="section-subtitle">
+                Most local businesses don’t have a marketing problem—they have a visibility problem. 
                 These four gaps keep good businesses hidden.
             </p>
-            <div class="problem-cards-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
-                <div class="glass-card">
+            <div class="problem-cards-container">
+                <div class="glass-card" data-animate>
                     <i class="fa-solid fa-laptop-code problem-icon"></i>
-                    <h3 class="text-cyan" style="font-size: 1.5rem; margin-bottom: 0.5rem;">No Professional Website</h3>
+                    <h3 class="card-title text-cyan">No Professional Website</h3>
                     <p>Customers search online before they call. If you aren't there, they choose someone who is.</p>
                 </div>
-                <div class="glass-card">
+                <div class="glass-card" data-animate>
                     <i class="fa-solid fa-binoculars problem-icon"></i>
-                    <h3 class="text-cyan" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Poor Google Presence</h3>
+                    <h3 class="card-title text-cyan">Poor Google Presence</h3>
                     <p>Over 90% of local searches start on Google.<br>An incomplete profile sends customers the wrong message.</p>
                 </div>
-                <div class="glass-card">
+                <div class="glass-card" data-animate>
                     <i class="fa-solid fa-calendar-days problem-icon"></i>
-                    <h3 class="text-cyan" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Outdated Online Presence</h3>
+                    <h3 class="card-title text-cyan">Outdated Online Presence</h3>
                     <p>Old information costs trust. Inconsistent hours or phone numbers lose jobs.</p>
                 </div>
-                <div class="glass-card">
+                <div class="glass-card" data-animate>
                     <i class="fa-solid fa-clock problem-icon"></i>
-                    <h3 class="text-cyan" style="font-size: 1.5rem; margin-bottom: 0.5rem;">No Time To Manage It</h3>
+                    <h3 class="card-title text-cyan">No Time To Manage It</h3>
                     <p>Business owners are too busy running the business to manage the technology.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Radar/Map Spotlight Section -->
     <section class="map-section" id="solution">
-        <!-- CSS Radar Background -->
         <div class="radar-container">
             <div class="radar-ring r1"></div>
             <div class="radar-ring r2"></div>
@@ -144,7 +130,6 @@
             <div class="radar-cross v-line"></div>
             <div class="radar-cross h-line"></div>
             
-            <!-- Mathematically Synchronized Blips -->
             <div class="radar-blip" style="top: 15%; left: 55%; animation-delay: 0.1s;"></div>
             <div class="radar-blip" style="top: 30%; left: 80%; animation-delay: 0.9s;"></div>
             <div class="radar-blip" style="top: 45%; left: 95%; animation-delay: 1.4s;"></div>
@@ -162,25 +147,25 @@
         <div class="container map-content">
             <span class="section-label">The Solution</span>
             <h2>The Mr. Lander <span class="text-cyan">Visibility System</span>™</h2>
-            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto;">
+            <p class="solution-subtitle">
                 A complete, managed solution that puts your business where customers are looking. We handle the tech—so you can handle the business.
             </p>
             <div class="flow-container">
-                <div class="glass-card flow-step">
+                <div class="glass-card flow-step" data-animate>
                     <div class="flow-icon"><i class="fa-solid fa-desktop"></i></div>
-                    <h3 class="text-cyan" style="margin-bottom: 0.5rem;">Professional Website</h3>
+                    <h3 class="card-title text-cyan">Professional Website</h3>
                     <p>The home base every customer checks before choosing you.</p>
                     <span class="flow-tag">// FOUNDATION</span>
                 </div>
-                <div class="glass-card flow-step">
+                <div class="glass-card flow-step" data-animate>
                     <div class="flow-icon"><i class="fa-brands fa-google"></i></div>
-                    <h3 class="text-cyan" style="margin-bottom: 0.5rem;">Google Business Presence</h3>
+                    <h3 class="card-title text-cyan">Google Business Presence</h3>
                     <p>Optimized, verified, and showing up when locals search.</p>
                     <span class="flow-tag">// DISCOVERY</span>
                 </div>
-                <div class="glass-card flow-step">
+                <div class="glass-card flow-step" data-animate>
                     <div class="flow-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-                    <h3 class="text-cyan" style="margin-bottom: 0.5rem;">Local Search Visibility</h3>
+                    <h3 class="card-title text-cyan">Local Search Visibility</h3>
                     <p>Found in your area, for your services, exactly when customers are ready to act.</p>
                     <span class="flow-tag">// REACH</span>
                 </div>
@@ -188,26 +173,25 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section id="how-it-works">
         <div class="container">
             <span class="section-label">How It Works</span>
-            <h2 style="text-align: center;">Your Path to <span class="text-cyan">Visibility</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+            <h2 class="text-center">Your Path to <span class="text-cyan">Visibility</span></h2>
+            <p class="section-subtitle">
                 A streamlined process that gets you online fast and keeps you visible.
             </p>
             <div class="how-it-works-grid">
-                <div class="glass-card step-card">
+                <div class="glass-card step-card" data-animate>
                     <span class="step-number">01</span>
                     <h3>Intake & Setup</h3>
                     <p>Tell us about your business. We collect your services, photos, hours, location, and contact information. You review the direction, and we handle the technical work — no tech required.</p>
                 </div>
-                <div class="glass-card step-card">
+                <div class="glass-card step-card" data-animate>
                     <span class="step-number">02</span>
                     <h3>Build & Launch</h3>
                     <p>We build your professional online presence, optimize your local visibility, and connect your Google Business Profile. Once approved, we launch everything and put your business in front of customers searching for your services.</p>
                 </div>
-                <div class="glass-card step-card">
+                <div class="glass-card step-card" data-animate>
                     <span class="step-number">03</span>
                     <h3>Manage & Report</h3>
                     <p>We handle hosting, updates, support, and ongoing improvements month after month. You receive a clear monthly performance report so you can see how your online presence is performing.</p>
@@ -216,41 +200,40 @@
         </div>
     </section>
 
-    <!-- Expertise Section -->
     <section id="expertise">
         <div class="container">
             <span class="section-label">Expertise</span>
-            <h2 style="text-align: center;">Every Element Has A <span class="text-bronze">Purpose</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Nothing here is random. Everything is built to convert. We don't build templates. We engineer outcomes.
+            <h2 class="text-center">Every Element Has A <span class="text-white">Purpose</span></h2>
+            <p class="section-subtitle">
+                Nothing here is random. Everything is built to convert. We don’t build templates. We engineer outcomes.
             </p>
             <div class="expertise-grid">
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-heading expertise-icon"></i>
                     <h3>Clear Headlines</h3>
                     <p>Visitors instantly know what you do.</p>
                 </div>
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-bullseye expertise-icon"></i>
                     <h3>Strategic CTAs</h3>
                     <p>Customers know exactly what to do next.</p>
                 </div>
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-mobile-screen-button expertise-icon"></i>
                     <h3>Mobile-First Design</h3>
                     <p>Looks flawless on every screen size.</p>
                 </div>
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-shield-halved expertise-icon"></i>
                     <h3>Trust Placement</h3>
                     <p>Trust signals right where decisions are made.</p>
                 </div>
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-route expertise-icon"></i>
                     <h3>Conversion Paths</h3>
                     <p>Guiding visitors to contact you.</p>
                 </div>
-                <div class="glass-card expertise-card">
+                <div class="glass-card expertise-card" data-animate>
                     <i class="fa-solid fa-magnifying-glass-chart expertise-icon"></i>
                     <h3>SEO-Ready Structure</h3>
                     <p>Built for Google to read and rank.</p>
@@ -259,19 +242,17 @@
         </div>
     </section>
 
-    <!-- Difference Section -->
     <section id="difference">
         <div class="container">
             <span class="section-label">The Difference</span>
-            <h2 style="text-align: center;">Not Just Another <span class="text-bronze">Website</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+            <h2 class="text-center">Not Just Another <span class="text-white">Website</span></h2>
+            <p class="section-subtitle">
                 Traditional agencies sell projects. Mr. Lander delivers a system. Here's what that looks like.
             </p>
             <div class="comparison-grid">
-                <!-- Mr. Lander -->
-                <div class="comp-col comp-ml glass-card">
+                <div class="comp-col comp-ml glass-card" data-animate>
                     <div class="recommended-badge">Recommended</div>
-                    <h3 class="text-cyan" style="margin-bottom: 1rem;">Mr. Lander <i class="fa-solid fa-check icon-check"></i></h3>
+                    <h3 class="text-cyan mb-1">Mr. Lander <i class="fa-solid fa-check icon-check"></i></h3>
                     <span class="diff-tagline">Built for local business owners</span>
                     <ul class="check-list">
                         <li data-icon="•">Affordable setup</li>
@@ -282,9 +263,8 @@
                         <li data-icon="•">Ongoing support after launch</li>
                     </ul>
                 </div>
-                <!-- Traditional Agency -->
-                <div class="comp-col comp-trad glass-card">
-                    <h3 class="text-bronze" style="margin-bottom: 1rem;">Traditional Agency <i class="fa-solid fa-xmark icon-x"></i></h3>
+                <div class="comp-col comp-trad glass-card" data-animate>
+                    <h3 class="text-white mb-1">Traditional Agency <i class="fa-solid fa-xmark icon-x"></i></h3>
                     <span class="diff-tagline">The old way of doing things</span>
                     <ul class="check-list">
                         <li data-icon="•">Large upfront costs ($5k+)</li>
@@ -299,17 +279,16 @@
         </div>
     </section>
 
-    <!-- Who We Serve Section -->
     <section id="who-we-serve">
         <div class="container">
             <span class="section-label">Who We Serve</span>
-            <h2 style="text-align: center;">Built For Local <span class="text-bronze">Businesses</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+            <h2 class="text-center">Built For Local <span class="text-white">Businesses</span></h2>
+            <p class="section-subtitle">
                 We help local service businesses establish a professional online presence that gets found and drives real growth.
             </p>
             <div class="comparison-grid">
-                <div class="comp-col comp-ml glass-card">
-                    <h3 class="text-cyan" style="margin-bottom: 1rem;">Great Fit</h3>
+                <div class="comp-col comp-ml glass-card" data-animate>
+                    <h3 class="text-cyan mb-1">Great Fit</h3>
                     <span class="diff-tagline">Built for your business</span>
                     <ul class="check-list">
                         <li data-icon="✓">Service-based businesses (HVAC, plumbing, roofing)</li>
@@ -320,8 +299,8 @@
                         <li data-icon="✓">Values simplicity and speed</li>
                     </ul>
                 </div>
-                <div class="comp-col comp-trad glass-card">
-                    <h3 class="text-bronze" style="margin-bottom: 1rem;">Not a Good Fit</h3>
+                <div class="comp-col comp-trad glass-card" data-animate>
+                    <h3 class="text-white mb-1">Not a Good Fit</h3>
                     <span class="diff-tagline">Probably not a match</span>
                     <ul class="check-list">
                         <li data-icon="✗">Large e-commerce platforms (5,000+ products)</li>
@@ -336,43 +315,33 @@
         </div>
     </section>
 
-    <!-- Trust Section -->
     <section id="trust">
         <div class="container">
             <span class="section-label">Trust</span>
-            <h2 style="text-align: center;">Why Businesses Choose <span class="text-cyan">Mr. Lander</span></h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+            <h2 class="text-center">Why Businesses Choose <span class="text-cyan">Mr. Lander</span></h2>
+            <p class="section-subtitle">
                 Built for reliability. Proven in the real world.
             </p>
             
-            <!-- Trust Cards Carousel (Left to Right) -->
-            <div class="carousel-wrapper trust-carousel-wrapper">
-                <button class="carousel-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel-wrapper trust-carousel-wrapper" role="region" aria-label="Trust Indicators" id="trustCarousel">
                 <div class="carousel-track trust-carousel-track">
-                    <!-- Set 1 -->
                     <div class="glass-card trust-card"><span>Simple process</span></div>
                     <div class="glass-card trust-card"><span>Clear pricing</span></div>
                     <div class="glass-card trust-card"><span>Cancel anytime</span></div>
                     <div class="glass-card trust-card"><span>Ongoing support</span></div>
                     <div class="glass-card trust-card"><span>Built for locals</span></div>
                     <div class="glass-card trust-card"><span>Fast setup</span></div>
-                    <!-- Set 2 (Duplicate for seamless loop) -->
-                    <div class="glass-card trust-card"><span>Simple process</span></div>
-                    <div class="glass-card trust-card"><span>Clear pricing</span></div>
-                    <div class="glass-card trust-card"><span>Cancel anytime</span></div>
-                    <div class="glass-card trust-card"><span>Ongoing support</span></div>
-                    <div class="glass-card trust-card"><span>Built for locals</span></div>
-                    <div class="glass-card trust-card"><span>Fast setup</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Simple process</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Clear pricing</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Cancel anytime</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Ongoing support</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Built for locals</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Fast setup</span></div>
                 </div>
-                <button class="carousel-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
-                <div class="carousel-dots trust-dots"></div>
             </div>
 
-            <!-- Reviews Carousel (Right to Left) -->
-            <div class="carousel-wrapper review-carousel-wrapper">
-                <button class="carousel-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel-wrapper review-carousel-wrapper" role="region" aria-label="Customer Reviews" id="reviewCarousel">
                 <div class="carousel-track review-carousel-track">
-                    <!-- Set 1 -->
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-text">"Within two weeks of launching my site, I started getting calls from customers who said they found me on Google. Best investment I've made for my business."</p>
@@ -390,69 +359,65 @@
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It's simple and it works."</p>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
                         <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I don't have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
                         <div class="review-author">Mike, Tree Service, Virginia</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I didn't want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
                         <div class="review-author">Sarah, Pet Groomer, Colorado</div>
                     </div>
-                    <!-- Set 2 (Duplicate for seamless loop) -->
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-text">"Within two weeks of launching my site, I started getting calls from customers who said they found me on Google. Best investment I've made for my business."</p>
                         <div class="review-author">Carlos, HVAC Contractor, Texas</div>
                     </div>
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-text">"I used to think a website was a luxury I couldn't afford. Mr. Lander made it simple. Now I have a professional presence that brings in leads while I sleep."</p>
                         <div class="review-author">Michelle, Salon Owner, Ohio</div>
                     </div>
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
                         <p class="review-text">"The monthly management is the real value. I don't touch anything technical anymore. They update my hours, post photos, and my Google ranking keeps climbing."</p>
                         <div class="review-author">David, Plumber, Florida</div>
                     </div>
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It's simple and it works."</p>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
                         <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
                     </div>
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I don't have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
                         <div class="review-author">Mike, Tree Service, Virginia</div>
                     </div>
-                    <div class="glass-card review-card">
+                    <div class="glass-card review-card" aria-hidden="true">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I didn't want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
                         <div class="review-author">Sarah, Pet Groomer, Colorado</div>
                     </div>
                 </div>
-                <button class="carousel-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
-                <div class="carousel-dots review-dots"></div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing">
-        <div class="container" style="text-align: center;">
+        <div class="container text-center">
             <span class="section-label">Pricing</span>
             <h2>Simple Pricing. No Surprises.</h2>
             <p class="pricing-tagline">A professional online presence shouldn't require thousands upfront.</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
-                <div class="glass-card pricing-card" style="min-width: 300px;">
+            <div class="pricing-grid">
+                <div class="glass-card pricing-card" data-animate>
                     <div class="price-sub">One-Time Setup Fee</div>
                     <div class="price-tag">$499</div>
-                    <p style="opacity: 0.7; margin-top: 1rem;">Website build & profile optimization</p>
-                    <ul class="check-list" style="text-align: left; display: inline-block; margin-top: 1.5rem;">
+                    <p class="pricing-card-desc">Website build & profile optimization</p>
+                    <ul class="check-list check-list-pricing">
                         <li data-icon="✓">Conversion-focused landing page</li>
                         <li data-icon="✓">Mobile-responsive design</li>
                         <li data-icon="✓">Google Business Profile setup</li>
@@ -461,11 +426,11 @@
                         <li data-icon="✓">Contact form integration</li>
                     </ul>
                 </div>
-                <div class="glass-card pricing-card" style="min-width: 300px; border-color: var(--cyan-glow);">
+                <div class="glass-card pricing-card" data-animate>
                     <div class="price-sub">Monthly Management</div>
-                    <div class="price-tag">$99<span style="font-size: 1.5rem; color: var(--chrome);">/mo</span></div>
-                    <p style="opacity: 0.7; margin-top: 1rem;">Hosting, updates, maintenance, security & support</p>
-                    <ul class="check-list" style="text-align: left; display: inline-block; margin-top: 1.5rem;">
+                    <div class="price-tag">$99<span class="price-mo">/mo</span></div>
+                    <p class="pricing-card-desc">Hosting, updates, maintenance, security & support</p>
+                    <ul class="check-list check-list-pricing">
                         <li data-icon="✓">Premium hosting & SSL</li>
                         <li data-icon="✓">Monthly content updates</li>
                         <li data-icon="✓">Google Profile monitoring</li>
@@ -478,16 +443,15 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section id="faq">
-        <div class="container">
+        <div class="container faq-container-wrap">
             <span class="section-label">FAQ</span>
-            <h2 style="text-align: center;">Got Questions? We Have <span class="text-cyan">Answers</span>.</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
+            <h2 class="text-center">Got Questions? We Have <span class="text-cyan">Answers</span>.</h2>
+            <p class="section-subtitle">
                 No jargon. No confusion. Just clarity.
             </p>
             <div class="faq-container">
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         What exactly do I get with Mr. Lander?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -496,7 +460,7 @@
                         A professional, mobile-friendly landing page, an optimized Google Business Profile, and reliable hosting, maintenance, and security—all set up and managed for you.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         Do I have to know anything about websites or technology?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -505,7 +469,7 @@
                         No. You provide your business information, photos, and services—we handle the rest.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         How long does it take to get my website live?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -514,7 +478,7 @@
                         Once we have everything we need from you, your landing page can typically be ready within 5 business days.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         Can I make changes to my website?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -523,7 +487,7 @@
                         Yes. Your service includes up to two content changes each month, such as updating text, images, or business information.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         What happens if I need to cancel my monthly management?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -532,7 +496,7 @@
                         You can cancel your service at any time. Your Mr. Lander website and hosting remain active through the end of your current billing period, after which the service is taken offline. Your Google Business Profile and business information remain yours.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         Are there any hidden fees or setup costs?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -541,7 +505,7 @@
                         None. The $499 setup fee covers your entire website build and Google profile optimization. The $99/month covers all hosting, security, and ongoing support. Flat rate, transparent pricing.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         Do you offer an annual plan or yearly subscription?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -550,16 +514,16 @@
                         Yes. You can choose the annual plan for $1,000 per year, which works out to $83.33 per month instead of $99 — saving you $15.67 per month, or $188 (15.8%) over the year. You can switch to the annual plan at any time.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
-                        How do I know it's working?
+                        How do I know it’s working?
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </summary>
                     <div class="faq-answer">
-                        Every month, you'll receive a simple analytics report showing how your online presence is performing, including things like website traffic and visibility. Each report also includes a "Mr. Lander's Tip of the Month" with practical ideas to help keep your business visible and growing.
+                        Every month, you’ll receive a simple analytics report showing how your online presence is performing, including things like website traffic and visibility. Each report also includes a “Mr. Lander’s Tip of the Month” with practical ideas to help keep your business visible and growing.
                     </div>
                 </details>
-                <details class="faq-item">
+                <details class="faq-item" data-animate>
                     <summary class="faq-question">
                         What do you need from me to get started?
                         <i class="fa-solid fa-plus faq-icon"></i>
@@ -572,67 +536,63 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <span class="section-label">How To Begin</span>
-                <h2 style="text-align: center;">Stop Being <span class="text-cyan">Invisible</span></h2>
-                <p style="text-align: center; font-size: 1.2rem; color: var(--chrome); max-width: 600px; margin: 0 auto 2rem auto;">
-                    Your customers are searching. Make sure they find you.
-                </p>
-                <form class="glass-card" style="margin-top: 3rem;" onsubmit="event.preventDefault(); alert('Submission received! Mr. Lander will be in touch.');">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" placeholder="Josh Custer" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Business/Industry</label>
-                            <input type="text" placeholder="The Tree Beaver">
-                        </div>
-                        <div class="form-group">
-                            <label>Location</label>
-                            <input type="text" placeholder="City, State">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" placeholder="(555) 123-4567">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="owner@business.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>I am a...</label>
-                            <select>
-                                <option value="new">New Customer</option>
-                                <option value="existing">Existing Client</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Tell us a bit about your business and what you need..."></textarea>
-                        </div>
-                        <div class="form-group full-width" style="align-items: center; margin-top: 1rem;">
-                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">Get Found</button>
-                        </div>
+        <div class="container contact-container-wrap">
+            <span class="section-label">How To Begin</span>
+            <h2 class="text-center">Stop Being <span class="text-cyan">Invisible</span></h2>
+            <p class="contact-subtitle">
+                Your customers are searching. Make sure they find you.
+            </p>
+            <form id="contact-form" class="glass-card contact-form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Josh Custer" required>
                     </div>
-                </form>
-            </div>
+                    <div class="form-group">
+                        <label for="business">Business/Industry</label>
+                        <input id="business" name="business" type="text" placeholder="The Tree Beaver">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input id="location" name="location" type="text" placeholder="City, State">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="owner@business.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">I am a...</label>
+                        <select id="status" name="status">
+                            <option value="new">New Customer</option>
+                            <option value="existing">Existing Client</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your business and what you need..."></textarea>
+                    </div>
+                    <div class="form-group full-width contact-submit-wrap">
+                        <button type="submit" class="btn-primary contact-submit-btn">Get Found</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-inner">
             <a href="#top" class="logo-link">
                 <div class="footer-brand">
-                    <img src="images/ML Favicon.png" alt="Mr. Lander Logo">
+                    <img src="images/ml-favicon.png" alt="Mr. Lander Logo">
                     <div>
-                        <div class="logo-text" style="font-size: 1rem;">MR. LANDER</div>
+                        <div class="logo-text footer-logo-text">MR. LANDER</div>
                         <div class="footer-tagline">
-                            <span class="logo-sub" style="text-align: left; margin-bottom: 5px;">The Business Visibility Specialist</span>
+                            <span class="logo-sub footer-sub-override">The Business Visibility Specialist</span>
                             Helping local businesses get found, get calls, and keep growing.
                         </div>
                     </div>
@@ -649,7 +609,7 @@
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col footer-desktop-legal">
                     <h4>Legal</h4>
                     <ul>
                         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -657,15 +617,14 @@
                     </ul>
                 </div>
             </div>
-            
-            <!-- Mobile Legal Dropdown -->
-            <div class="mobile-legal-dropdown">
-                <button class="legal-toggle">Legal <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="legal-content">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
+
+            <details class="footer-mobile-legal">
+                <summary>Legal</summary>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </details>
         </div>
         
         <div class="footer-bottom">
@@ -677,7 +636,6 @@
         </div>
     </footer>
 
-    <!-- External JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
