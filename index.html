@@ -18,7 +18,7 @@
     <!-- Top Anchor -->
     <div id="top"></div>
 
-    <!-- Interactive Cursor Elements -->
+    <!-- Interactive Cursor Elements (Desktop Only) -->
     <div id="cursor-pupil">
         <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="6" fill="none" stroke="#33e0f0" stroke-width="2"/>
@@ -41,8 +41,8 @@
         <div class="container nav-inner">
             <a href="#top" class="logo-link">
                 <div class="logo-area">
-                    <img src="images/ML Favicon.png" alt="Mr. Lander Logo">
-                    <div>
+                    <img src="images/ML Favicon.png" alt="Mr. Lander Logo" class="nav-logo">
+                    <div class="logo-text-container">
                         <div class="logo-text">MR. LANDER</div>
                         <div class="logo-sub">The Business Visibility Specialist</div>
                     </div>
@@ -55,13 +55,30 @@
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
             <div class="nav-actions">
-                <div class="hamburger">
+                <div class="hamburger" id="hamburger-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <a href="#contact" class="btn-primary">
+                <a href="#contact" class="btn-primary nav-cta">
                     <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
                 </a>
             </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#solution">The Visibility System</a></li>
+                <li><a href="#difference">The Difference</a></li>
+                <li><a href="#who-we-serve">Who We Serve</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li class="mobile-cta-item"><a href="#contact" class="btn-primary mobile-cta">
+                    <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
+                </a></li>
+            </ul>
         </div>
     </nav>
 
@@ -88,7 +105,7 @@
             <span class="section-label">The Problem</span>
             <h2 style="text-align: center;">Why Businesses Stay <span class="text-bronze">Invisible</span></h2>
             <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Most local businesses don’t have a marketing problem—they have a visibility problem. 
+                Most local businesses don't have a marketing problem—they have a visibility problem. 
                 These four gaps keep good businesses hidden.
             </p>
             <div class="problem-cards-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
@@ -205,7 +222,7 @@
             <span class="section-label">Expertise</span>
             <h2 style="text-align: center;">Every Element Has A <span class="text-bronze">Purpose</span></h2>
             <p style="text-align: center; font-size: 1.1rem; color: var(--chrome); max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6;">
-                Nothing here is random. Everything is built to convert. We don’t build templates. We engineer outcomes.
+                Nothing here is random. Everything is built to convert. We don't build templates. We engineer outcomes.
             </p>
             <div class="expertise-grid">
                 <div class="glass-card expertise-card">
@@ -330,6 +347,7 @@
             
             <!-- Trust Cards Carousel (Left to Right) -->
             <div class="carousel-wrapper trust-carousel-wrapper">
+                <button class="carousel-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
                 <div class="carousel-track trust-carousel-track">
                     <!-- Set 1 -->
                     <div class="glass-card trust-card"><span>Simple process</span></div>
@@ -346,10 +364,13 @@
                     <div class="glass-card trust-card"><span>Built for locals</span></div>
                     <div class="glass-card trust-card"><span>Fast setup</span></div>
                 </div>
+                <button class="carousel-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="carousel-dots trust-dots"></div>
             </div>
 
             <!-- Reviews Carousel (Right to Left) -->
             <div class="carousel-wrapper review-carousel-wrapper">
+                <button class="carousel-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
                 <div class="carousel-track review-carousel-track">
                     <!-- Set 1 -->
                     <div class="glass-card review-card">
@@ -369,17 +390,17 @@
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It's simple and it works."</p>
                         <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <p class="review-text">"I don't have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
                         <div class="review-author">Mike, Tree Service, Virginia</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <p class="review-text">"I didn't want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
                         <div class="review-author">Sarah, Pet Groomer, Colorado</div>
                     </div>
                     <!-- Set 2 (Duplicate for seamless loop) -->
@@ -400,20 +421,22 @@
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It's simple and it works."</p>
                         <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <p class="review-text">"I don't have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
                         <div class="review-author">Mike, Tree Service, Virginia</div>
                     </div>
                     <div class="glass-card review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <p class="review-text">"I didn't want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
                         <div class="review-author">Sarah, Pet Groomer, Colorado</div>
                     </div>
                 </div>
+                <button class="carousel-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="carousel-dots review-dots"></div>
             </div>
         </div>
     </section>
@@ -529,11 +552,11 @@
                 </details>
                 <details class="faq-item">
                     <summary class="faq-question">
-                        How do I know it’s working?
+                        How do I know it's working?
                         <i class="fa-solid fa-plus faq-icon"></i>
                     </summary>
                     <div class="faq-answer">
-                        Every month, you’ll receive a simple analytics report showing how your online presence is performing, including things like website traffic and visibility. Each report also includes a “Mr. Lander’s Tip of the Month” with practical ideas to help keep your business visible and growing.
+                        Every month, you'll receive a simple analytics report showing how your online presence is performing, including things like website traffic and visibility. Each report also includes a "Mr. Lander's Tip of the Month" with practical ideas to help keep your business visible and growing.
                     </div>
                 </details>
                 <details class="faq-item">
@@ -632,6 +655,15 @@
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
+                </div>
+            </div>
+            
+            <!-- Mobile Legal Dropdown -->
+            <div class="mobile-legal-dropdown">
+                <button class="legal-toggle">Legal <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="legal-content">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
         </div>
