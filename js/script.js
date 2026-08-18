@@ -1,4 +1,4 @@
-// --- 1. Hero Parallax ---
+// --- 1. Hero Parallax (unchanged) ---
 const heroMockup = document.getElementById('hero-mockup');
 let ticking = false;
 
@@ -15,7 +15,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --- 2. Interactive Cybereye Cursor ---
+// --- 2. Interactive Cybereye Cursor (YOUR ORIGINAL — UNCHANGED) ---
 const cursorPupil = document.getElementById('cursor-pupil');
 const cursorOutline = document.getElementById('cursor-eye-outline');
 
@@ -79,7 +79,7 @@ if (cursorPupil && cursorOutline) {
     });
 }
 
-// --- 3. Mobile Menu Toggle & ARIA Accessibility ---
+// --- 3. Mobile Menu Toggle (unchanged) ---
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -115,7 +115,7 @@ if (hamburger && mobileMenu) {
     });
 }
 
-// --- 4. Intersection Observer for Scroll Animations ---
+// --- 4. Intersection Observer for Scroll Animations (unchanged) ---
 const animElements = document.querySelectorAll('[data-animate]');
 
 if ('IntersectionObserver' in window) {
@@ -133,21 +133,72 @@ if ('IntersectionObserver' in window) {
     animElements.forEach(el => el.classList.add('is-visible'));
 }
 
-// --- 5. Contact Form Handler ---
+// --- 5. Contact Form Handler (FIXED: validation + sanitization) ---
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const messageInput = document.getElementById('message');
+        const businessInput = document.getElementById('business');
+        const locationInput = document.getElementById('location');
+        const statusSelect = document.getElementById('status');
+
+        let errors = [];
+
+        // Validate name
+        if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+            errors.push('Name is required (minimum 2 characters)');
+            nameInput.style.borderColor = '#ff4d4d';
+        } else {
+            nameInput.style.borderColor = '#33e0f0';
+        }
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+            errors.push('Please enter a valid email address');
+            emailInput.style.borderColor = '#ff4d4d';
+        } else {
+            emailInput.style.borderColor = '#33e0f0';
+        }
+
+        // Validate phone (optional but must be valid if provided)
+        if (phoneInput.value.trim()) {
+            const phoneRegex = /^[\+\d\s\-\(\)]{7,20}$/;
+            if (!phoneRegex.test(phoneInput.value.trim())) {
+                errors.push('Please enter a valid phone number');
+                phoneInput.style.borderColor = '#ff4d4d';
+            } else {
+                phoneInput.style.borderColor = '#33e0f0';
+            }
+        }
+
+        if (errors.length > 0) {
+            alert('Please fix the following:\n\n• ' + errors.join('\n• '));
+            return;
+        }
+
+        // Sanitize message (remove script tags and HTML)
+        let sanitizedMessage = '';
+        if (messageInput.value.trim()) {
+            sanitizedMessage = messageInput.value.trim()
+                .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+                .replace(/<[^>]*>/g, '');
+        }
+
         const formData = {
-            name: document.getElementById('name').value,
-            business: document.getElementById('business').value,
-            location: document.getElementById('location').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            status: document.getElementById('status').value,
-            message: document.getElementById('message').value
+            name: nameInput.value.trim(),
+            business: businessInput.value.trim(),
+            location: locationInput.value.trim(),
+            phone: phoneInput.value.trim(),
+            email: emailInput.value.trim(),
+            status: statusSelect.value,
+            message: sanitizedMessage
         };
 
         try {
@@ -156,18 +207,34 @@ if (contactForm) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
+
             if (!response.ok) throw new Error('Submission failed');
 
-            alert('Submission received! Mr. Lander will be in touch.');
+            alert('✅ Submission received! Mr. Lander will be in touch shortly.');
             contactForm.reset();
+
+            // Reset border colors
+            document.querySelectorAll('#contact-form input, #contact-form textarea, #contact-form select')
+                .forEach(el => el.style.borderColor = '');
+
         } catch (error) {
             console.error('Form submission error:', error);
-            alert('There was an issue sending your message. Please try again later.');
+            alert('❌ There was an issue sending your message. Please try again later.');
         }
+    });
+
+    // Real-time validation feedback (remove error borders on typing)
+    const formInputs = contactForm.querySelectorAll('input, textarea, select');
+    formInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            if (input.value.trim()) {
+                input.style.borderColor = '#33e0f0';
+            }
+        });
     });
 }
 
-// --- 6. Infinite Interactive Carousels with Robust Touch & Scroll Support ---
+// --- 6. Infinite Interactive Carousels (FIXED: better touch handling) ---
 function setupInteractiveCarousel(wrapperId, speed) {
     const wrapper = document.getElementById(wrapperId);
     if (!wrapper) return;
@@ -179,6 +246,7 @@ function setupInteractiveCarousel(wrapperId, speed) {
     let singleSetWidth = 0;
     let startX = 0;
     let isDragging = false;
+    let animationId = null;
 
     function updateWidth() {
         singleSetWidth = track.scrollWidth / 2;
@@ -187,24 +255,27 @@ function setupInteractiveCarousel(wrapperId, speed) {
     window.addEventListener('resize', updateWidth);
     setTimeout(updateWidth, 100);
 
-    wrapper.addEventListener('mouseenter', () => isHovered = true);
-    wrapper.addEventListener('mouseleave', () => isHovered = false);
+    wrapper.addEventListener('mouseenter', () => { isHovered = true; });
+    wrapper.addEventListener('mouseleave', () => { isHovered = false; });
 
-    // Desktop Wheel Event (Scroll Trap Fix)
+    // Desktop wheel scroll
     wrapper.addEventListener('wheel', (e) => {
         if (!isHovered) return;
-        
         if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
             e.preventDefault();
             scrollPos += e.deltaX * 0.8;
         }
     }, { passive: false });
 
-    // Mobile Touch / Swipe Drag Support with preventDefault to capture swipes reliably
+    // Touch drag (better for tablets)
     wrapper.addEventListener('touchstart', (e) => {
         isDragging = true;
-        isHovered = true;
         startX = e.touches[0].clientX;
+        // Pause animation while dragging
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
     }, { passive: true });
 
     wrapper.addEventListener('touchmove', (e) => {
@@ -216,11 +287,21 @@ function setupInteractiveCarousel(wrapperId, speed) {
         if (e.cancelable) {
             e.preventDefault();
         }
+        // Update position during drag
+        if (scrollPos >= singleSetWidth) {
+            scrollPos -= singleSetWidth;
+        } else if (scrollPos < 0) {
+            scrollPos += singleSetWidth;
+        }
+        track.style.transform = `translate3d(${-scrollPos}px, 0, 0)`;
     }, { passive: false });
 
     const endDrag = () => {
         isDragging = false;
-        isHovered = false;
+        // Resume animation
+        if (!animationId) {
+            animate();
+        }
     };
 
     window.addEventListener('touchend', endDrag);
@@ -238,7 +319,7 @@ function setupInteractiveCarousel(wrapperId, speed) {
         }
 
         track.style.transform = `translate3d(${-scrollPos}px, 0, 0)`;
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
     }
     
     animate();

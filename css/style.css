@@ -26,6 +26,7 @@
     --gold: #ffd700;
     --font-head: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --nav-height: 68px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -314,6 +315,9 @@ nav {
     min-width: 40px;
     min-height: 40px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 /* Mobile Menu & Smooth Scale Underline Effect */
@@ -378,10 +382,17 @@ nav {
 }
 
 /* Hero Layout */
-.hero { min-height: auto; display: flex; align-items: center; overflow: hidden; padding-top: 4.5rem; padding-bottom: 2rem; }
+.hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: calc(var(--nav-height) + 1rem);
+    padding-bottom: 2rem;
+}
 .hero-inner { display: flex; flex-direction: column-reverse; align-items: center; gap: 1.5rem; width: 100%; text-align: center; }
 .hero-content { flex: 1; }
-.hero-image-wrapper { flex: 1; display: flex; justify-content: center; }
+.hero-image-wrapper { flex: 1; display: flex; justify-content: center; max-width: 100%; }
 
 @property --angle {
   syntax: '<angle>';
@@ -389,7 +400,12 @@ nav {
   inherits: false;
 }
 
-.glow-border { position: relative; display: inline-block; border-radius: 16px; }
+.glow-border {
+    position: relative;
+    display: inline-block;
+    border-radius: 16px;
+    max-width: 100%;
+}
 .glow-border::before, .glow-border::after { content: ''; position: absolute; border-radius: 16px; }
 .glow-border::before {
     top: -3px; left: -3px; right: -3px; bottom: -3px;
@@ -401,7 +417,15 @@ nav {
 
 @keyframes rotateLight { to { --angle: 360deg; } }
 
-#hero-mockup { max-width: 100%; height: auto; border-radius: 12px; position: relative; z-index: 1; will-change: transform; }
+#hero-mockup {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    display: block;
+}
 
 /* Problem Section */
 .problem-cards-container {
@@ -536,9 +560,8 @@ ul.check-list li::before { content: attr(data-icon); font-weight: bold; color: v
 
 .trust-carousel-wrapper { margin-top: 2rem; }
 .trust-card { 
-    flex: 0 0 220px; 
-    width: 220px; 
-    margin-right: 0; 
+    flex: 0 0 clamp(170px, 30vw, 220px);
+    width: clamp(170px, 30vw, 220px);
     padding: 1.25rem 1.5rem; 
     text-align: center; 
     display: flex; 
@@ -547,13 +570,12 @@ ul.check-list li::before { content: attr(data-icon); font-weight: bold; color: v
     white-space: normal !important; 
     word-break: break-word;
 }
-.trust-card span { font-family: var(--font-head); font-size: 1rem; font-weight: 500; color: var(--cyan); letter-spacing: 0.5px; }
+.trust-card span { font-family: var(--font-head); font-size: clamp(0.8rem, 1.2vw, 1rem); font-weight: 500; color: var(--cyan); letter-spacing: 0.5px; }
 
 .review-carousel-wrapper { margin-top: 1rem; }
 .review-card { 
-    flex: 0 0 300px; 
-    width: 300px; 
-    margin-right: 0; 
+    flex: 0 0 clamp(250px, 40vw, 300px);
+    width: clamp(250px, 40vw, 300px);
     padding: 1.5rem; 
     display: flex; 
     flex-direction: column; 
@@ -590,16 +612,34 @@ ul.check-list li::before { content: attr(data-icon); font-weight: bold; color: v
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
 .form-group.full-width { grid-column: 1 / -1; }
 label { font-family: var(--font-head); font-size: 0.85rem; color: var(--chrome); }
-input, select, textarea { background: rgba(201, 207, 212, 0.05); border: 1px solid rgba(51, 224, 240, 0.2); padding: 0.75rem; border-radius: 6px; color: var(--white); font-family: var(--font-body); outline: none; transition: border 0.3s; min-height: 40px; }
+input, select, textarea { background: rgba(201, 207, 212, 0.05); border: 1px solid rgba(51, 224, 240, 0.2); padding: 0.75rem; border-radius: 6px; color: var(--white); font-family: var(--font-body); outline: none; transition: border 0.3s; min-height: 40px; width: 100%; }
 input:focus, select:focus, textarea:focus { border-color: var(--cyan); }
 select option { background: var(--bg-gunmetal); color: var(--white); }
 
 /* Footer */
 footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
-.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-bottom: 2.5rem; text-align: center; }
-.footer-brand { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.footer-inner { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2rem; 
+    padding-bottom: 2.5rem; 
+    text-align: center; 
+}
+.footer-brand { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.75rem; 
+}
 .footer-brand img { height: 28px; filter: drop-shadow(0 0 6px var(--cyan-glow)); }
-.footer-tagline { font-size: 0.8rem; color: var(--chrome); line-height: 1.4; margin-top: 0.2rem; }
+.footer-tagline { 
+    font-size: 0.8rem; 
+    color: var(--chrome); 
+    line-height: 1.4; 
+    margin-top: 0.2rem; 
+    text-align: center; 
+}
 
 .footer-links-wrapper { display: none; } 
 
@@ -613,14 +653,54 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
 .footer-bottom { border-top: 1px solid rgba(51, 224, 240, 0.05); padding: 1.25rem 0; }
 .footer-copyright { font-size: 0.75rem; opacity: 0.5; text-align: center; white-space: nowrap; }
 
-/* TABLET CONTENT TIER (42rem to 63.98rem — covers iPad split-view/portrait Android tablets up through small laptops).
-   All content sections upgrade together here so nothing is left half-mobile/half-tablet. Nav intentionally
-   stays in its compact mobile form until 48rem (see NAV TIER below) — the full desktop nav's logo subtitle
-   wraps to 3 lines below ~48rem, which grows the fixed nav taller than the hero's padding-top allows and makes
-   it overlap the hero text underneath. */
-@media (min-width: 42rem) and (max-width: 63.98rem) {
-    .hero { min-height: auto; padding-top: 5rem; padding-bottom: 3rem; }
+/* ============================================
+   TABLET (768px - 1023px)
+   ============================================ */
+@media (min-width: 48rem) and (max-width: 63.98rem) {
+    .mobile-title { display: none; }
+    .logo-text-wrap { display: block; }
+    .hamburger { display: none; }
+    .mobile-menu { display: none !important; }
+
+    .hero { padding-top: calc(var(--nav-height) + 2rem); }
     .hero-inner { flex-direction: row; text-align: left; gap: 2rem; }
+
+    .nav-links { 
+        display: flex; 
+        gap: 1.5rem; 
+        list-style: none; 
+        margin-left: auto; 
+        margin-right: 1.5rem; 
+        align-items: center;
+    }
+    .nav-links a {
+        font-family: var(--font-head);
+        color: var(--chrome);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+        position: relative;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 4px;
+        left: 0;
+        background: var(--cyan);
+        transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .btn-desktop { display: inline-flex; }
 
     .problem-cards-container { grid-template-columns: repeat(4, 1fr); margin-top: 2.5rem; }
     .how-it-works-grid { grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
@@ -652,36 +732,16 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
     .footer-mobile-legal { display: none; }
 }
 
-/* TABLET NAV TIER (48rem to 63.98rem) — the desktop-style nav (full logo lockup + inline links + button)
-   needs this extra width or the logo subtitle wraps to 3 lines and overlaps the hero below it. Below 48rem
-   the compact mobile nav (hamburger + centered title) stays in place, which fits cleanly at any width. */
-@media (min-width: 48rem) and (max-width: 63.98rem) {
-    .mobile-title { display: none; }
-    .logo-text-wrap { display: block; }
-    .hamburger { display: none; }
-    .mobile-menu { display: none !important; }
-
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; margin-left: auto; margin-right: 1.5rem; }
-    .nav-links a {
-        font-family: var(--font-head); color: var(--chrome); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; position: relative; min-height: 44px; display: inline-flex; align-items: center;
-    }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links a::after {
-        content: ''; position: absolute; width: 0; height: 2px; bottom: 4px; left: 0; background: var(--cyan); transition: width 0.3s ease;
-    }
-    .nav-links a:hover::after { width: 100%; }
-
-    .btn-desktop { display: inline-flex; }
-}
-
-/* DESKTOP TIER (1024px and up) */
+/* ============================================
+   DESKTOP (1024px+)
+   ============================================ */
 @media (min-width: 64rem) {
     .mobile-title { display: none; }
     .logo-text-wrap { display: block; }
     .hamburger { display: none; }
     .mobile-menu { display: none !important; }
     
-    .nav-links { display: flex; gap: 2rem; list-style: none; margin-left: auto; margin-right: 2rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; margin-left: auto; margin-right: 2rem; align-items: center; }
     .nav-links a {
         font-family: var(--font-head); color: var(--chrome); text-decoration: none; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; position: relative; min-height: 44px; display: inline-flex; align-items: center;
     }
@@ -693,7 +753,7 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
     
     .btn-desktop { display: inline-flex; }
 
-    .hero { min-height: 100vh; padding-top: 5rem; padding-bottom: 0; }
+    .hero { min-height: 100vh; padding-top: calc(var(--nav-height) + 2rem); padding-bottom: 0; }
     .hero-inner { flex-direction: row; text-align: left; gap: 3rem; }
 
     .problem-cards-container { grid-template-columns: repeat(4, 1fr); margin-top: 3rem; }
@@ -726,4 +786,16 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
     .footer-col a { font-family: var(--font-body); font-size: 0.9rem; color: var(--chrome); text-decoration: none; transition: color 0.3s ease; }
     .footer-col a:hover { color: var(--white); }
     .footer-mobile-legal { display: none; }
+}
+
+/* ============================================
+   VERY SMALL SCREENS (< 360px)
+   ============================================ */
+@media (max-width: 22.5rem) {
+    .hero { padding-top: calc(var(--nav-height) + 0.5rem); }
+    #hero-mockup { max-width: 100%; height: auto; }
+    .trust-card { flex: 0 0 150px; width: 150px; }
+    .review-card { flex: 0 0 220px; width: 220px; }
+    .pricing-card { padding: 1.5rem 1rem; }
+    .price-tag { font-size: 2.8rem; }
 }
