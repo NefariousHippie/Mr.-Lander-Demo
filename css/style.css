@@ -613,31 +613,12 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
 .footer-bottom { border-top: 1px solid rgba(51, 224, 240, 0.05); padding: 1.25rem 0; }
 .footer-copyright { font-size: 0.75rem; opacity: 0.5; text-align: center; white-space: nowrap; }
 
-/* PORTRAIT TABLET TIER (Specific range for portrait tablets like iPad: 42rem to 47.98rem) */
-@media (min-width: 42rem) and (max-width: 47.98rem) {
-    .how-it-works-grid { grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
-    .expertise-grid { grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
-}
-
-/* TABLET TIER / SMALL LAPTOPS (48rem to 63.98rem) */
-@media (min-width: 48rem) and (max-width: 63.98rem) {
-    .mobile-title { display: none; }
-    .logo-text-wrap { display: block; }
-    .hamburger { display: none; }
-    .mobile-menu { display: none !important; }
-    
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; margin-left: auto; margin-right: 1.5rem; }
-    .nav-links a {
-        font-family: var(--font-head); color: var(--chrome); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; position: relative; min-height: 44px; display: inline-flex; align-items: center;
-    }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links a::after {
-        content: ''; position: absolute; width: 0; height: 2px; bottom: 4px; left: 0; background: var(--cyan); transition: width 0.3s ease;
-    }
-    .nav-links a:hover::after { width: 100%; }
-    
-    .btn-desktop { display: inline-flex; }
-
+/* TABLET CONTENT TIER (42rem to 63.98rem — covers iPad split-view/portrait Android tablets up through small laptops).
+   All content sections upgrade together here so nothing is left half-mobile/half-tablet. Nav intentionally
+   stays in its compact mobile form until 48rem (see NAV TIER below) — the full desktop nav's logo subtitle
+   wraps to 3 lines below ~48rem, which grows the fixed nav taller than the hero's padding-top allows and makes
+   it overlap the hero text underneath. */
+@media (min-width: 42rem) and (max-width: 63.98rem) {
     .hero { min-height: auto; padding-top: 5rem; padding-bottom: 3rem; }
     .hero-inner { flex-direction: row; text-align: left; gap: 2rem; }
 
@@ -645,10 +626,11 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
     .how-it-works-grid { grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
     .expertise-grid { grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
     .pricing-grid { flex-direction: row; margin-top: 1rem; justify-content: center; }
-    
+
     .glass-card { max-width: none; margin-inline: 0; }
 
     .flow-container { flex-direction: row; margin-top: 2.5rem; }
+    .flow-step { min-width: 0; flex: 1 1 0; }
     .flow-step:not(:last-child)::after { content: '⇄'; right: -2rem; bottom: auto; top: 50%; transform: translateY(-50%); z-index: 10; }
 
     .step-number { left: 2rem; transform: translateX(0); }
@@ -668,6 +650,28 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
     .footer-col a { font-family: var(--font-body); font-size: 0.9rem; color: var(--chrome); text-decoration: none; transition: color 0.3s ease; }
     .footer-col a:hover { color: var(--white); }
     .footer-mobile-legal { display: none; }
+}
+
+/* TABLET NAV TIER (48rem to 63.98rem) — the desktop-style nav (full logo lockup + inline links + button)
+   needs this extra width or the logo subtitle wraps to 3 lines and overlaps the hero below it. Below 48rem
+   the compact mobile nav (hamburger + centered title) stays in place, which fits cleanly at any width. */
+@media (min-width: 48rem) and (max-width: 63.98rem) {
+    .mobile-title { display: none; }
+    .logo-text-wrap { display: block; }
+    .hamburger { display: none; }
+    .mobile-menu { display: none !important; }
+
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; margin-left: auto; margin-right: 1.5rem; }
+    .nav-links a {
+        font-family: var(--font-head); color: var(--chrome); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; position: relative; min-height: 44px; display: inline-flex; align-items: center;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a::after {
+        content: ''; position: absolute; width: 0; height: 2px; bottom: 4px; left: 0; background: var(--cyan); transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .btn-desktop { display: inline-flex; }
 }
 
 /* DESKTOP TIER (1024px and up) */
