@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Lander — The Business Visibility Specialist</title>
+    <link rel="icon" type="image/png" href="images/ml-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <div id="cursor-pupil">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="6" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <circle cx="20" cy="20" r="2.5" fill="#33e0f0"/>
+        </svg>
+    </div>
+    <div id="cursor-eye-outline">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8 C8 8 2 20 2 20 C2 20 8 32 20 32 C32 32 38 20 38 20 C38 20 32 8 20 8 Z" fill="none" stroke="#33e0f0" stroke-width="2"/>
+            <path d="M12 20 L2 20" stroke="#33e0f0" stroke-width="1.5"/>
+            <path d="M28 20 L38 20" stroke="#33e0f0" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <div id="parallax-bg"></div>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="#top" class="logo-link">
+                <img src="images/ml-favicon.png" alt="Mr. Lander Logo">
+                <div class="logo-text-wrap">
+                    <div class="logo-text">MR. LANDER</div>
+                    <div class="logo-sub">The Business Visibility Specialist</div>
+                </div>
+            </a>
+            <div class="mobile-title">MR. LANDER</div>
+            
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn-primary btn-desktop">
+                    <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
+                </a>
+                <div class="hamburger" role="button" aria-label="Toggle Navigation" aria-expanded="false" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#difference">Difference</a></li>
+                <li><a href="#who-we-serve">Who We Serve</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#contact" class="btn-primary btn-mobile-action">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>Let's Make You <span class="text-cyan pulse-glow">Visible.</span></h1>
+                <p class="hero-desc">
+                    Professional websites and online visibility for local businesses—without the cost, complexity, or hassle of a traditional agency.
+                </p>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="glow-border">
+                    <img id="hero-mockup" src="images/ml-hero.png" alt="Mr. Lander Hologram">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem">
+        <div class="container">
+            <span class="section-label">The Problem</span>
+            <h2 class="text-center">Why Businesses Stay <span class="text-white">Invisible</span></h2>
+            <p class="section-subtitle">
+                Most local businesses don’t have a marketing problem—they have a visibility problem. 
+                These four gaps keep good businesses hidden.
+            </p>
+            <div class="problem-cards-container">
+                <div class="glass-card" data-animate>
+                    <i class="fa-solid fa-laptop-code problem-icon"></i>
+                    <h3 class="card-title text-cyan">No Professional Website</h3>
+                    <p>Customers search online before they call. If you aren't there, they choose someone who is.</p>
+                </div>
+                <div class="glass-card" data-animate>
+                    <i class="fa-solid fa-binoculars problem-icon"></i>
+                    <h3 class="card-title text-cyan">Poor Google Presence</h3>
+                    <p>Over 90% of local searches start on Google.<br>An incomplete profile sends customers the wrong message.</p>
+                </div>
+                <div class="glass-card" data-animate>
+                    <i class="fa-solid fa-calendar-days problem-icon"></i>
+                    <h3 class="card-title text-cyan">Outdated Online Presence</h3>
+                    <p>Old information costs trust. Inconsistent hours or phone numbers lose jobs.</p>
+                </div>
+                <div class="glass-card" data-animate>
+                    <i class="fa-solid fa-clock problem-icon"></i>
+                    <h3 class="card-title text-cyan">No Time To Manage It</h3>
+                    <p>Business owners are too busy running the business to manage the technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section" id="solution">
+        <div class="radar-container">
+            <div class="radar-ring r1"></div>
+            <div class="radar-ring r2"></div>
+            <div class="radar-ring r3"></div>
+            <div class="radar-ring r4"></div>
+            <div class="radar-cross v-line"></div>
+            <div class="radar-cross h-line"></div>
+            
+            <div class="radar-blip" style="top: 15%; left: 55%; animation-delay: 0.1s;"></div>
+            <div class="radar-blip" style="top: 30%; left: 80%; animation-delay: 0.9s;"></div>
+            <div class="radar-blip" style="top: 45%; left: 95%; animation-delay: 1.4s;"></div>
+            <div class="radar-blip" style="top: 65%; left: 90%; animation-delay: 1.8s;"></div>
+            <div class="radar-blip" style="top: 85%; left: 75%; animation-delay: 2.4s;"></div>
+            <div class="radar-blip" style="top: 95%; left: 40%; animation-delay: 3.2s;"></div>
+            <div class="radar-blip" style="top: 80%; left: 15%; animation-delay: 3.8s;"></div>
+            <div class="radar-blip" style="top: 55%; left: 5%; animation-delay: 4.4s;"></div>
+            <div class="radar-blip" style="top: 25%; left: 10%; animation-delay: 5.0s;"></div>
+            <div class="radar-blip" style="top: 20%; left: 40%; animation-delay: 5.7s;"></div>
+            
+            <div class="radar-sweep"></div>
+        </div>
+
+        <div class="container map-content">
+            <span class="section-label">The Solution</span>
+            <h2>The Mr. Lander <span class="text-cyan">Visibility System</span>™</h2>
+            <p class="solution-subtitle">
+                A complete, managed solution that puts your business where customers are looking. We handle the tech—so you can handle the business.
+            </p>
+            <div class="flow-container">
+                <div class="glass-card flow-step" data-animate>
+                    <div class="flow-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <h3 class="card-title text-cyan">Professional Website</h3>
+                    <p>The home base every customer checks before choosing you.</p>
+                    <span class="flow-tag">// FOUNDATION</span>
+                </div>
+                <div class="glass-card flow-step" data-animate>
+                    <div class="flow-icon"><i class="fa-brands fa-google"></i></div>
+                    <h3 class="card-title text-cyan">Google Business Presence</h3>
+                    <p>Optimized, verified, and showing up when locals search.</p>
+                    <span class="flow-tag">// DISCOVERY</span>
+                </div>
+                <div class="glass-card flow-step" data-animate>
+                    <div class="flow-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                    <h3 class="card-title text-cyan">Local Search Visibility</h3>
+                    <p>Found in your area, for your services, exactly when customers are ready to act.</p>
+                    <span class="flow-tag">// REACH</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <span class="section-label">How It Works</span>
+            <h2 class="text-center">Your Path to <span class="text-cyan">Visibility</span></h2>
+            <p class="section-subtitle">
+                A streamlined process that gets you online fast and keeps you visible.
+            </p>
+            <div class="how-it-works-grid">
+                <div class="glass-card step-card" data-animate>
+                    <span class="step-number">01</span>
+                    <h3>Intake & Setup</h3>
+                    <p>Tell us about your business. We collect your services, photos, hours, location, and contact information. You review the direction, and we handle the technical work — no tech required.</p>
+                </div>
+                <div class="glass-card step-card" data-animate>
+                    <span class="step-number">02</span>
+                    <h3>Build & Launch</h3>
+                    <p>We build your professional online presence, optimize your local visibility, and connect your Google Business Profile. Once approved, we launch everything and put your business in front of customers searching for your services.</p>
+                </div>
+                <div class="glass-card step-card" data-animate>
+                    <span class="step-number">03</span>
+                    <h3>Manage & Report</h3>
+                    <p>We handle hosting, updates, support, and ongoing improvements month after month. You receive a clear monthly performance report so you can see how your online presence is performing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="container">
+            <span class="section-label">Expertise</span>
+            <h2 class="text-center">Every Element Has A <span class="text-white">Purpose</span></h2>
+            <p class="section-subtitle">
+                Nothing here is random. Everything is built to convert. We don’t build templates. We engineer outcomes.
+            </p>
+            <div class="expertise-grid">
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-heading expertise-icon"></i>
+                    <h3>Clear Headlines</h3>
+                    <p>Visitors instantly know what you do.</p>
+                </div>
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-bullseye expertise-icon"></i>
+                    <h3>Strategic CTAs</h3>
+                    <p>Customers know exactly what to do next.</p>
+                </div>
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-mobile-screen-button expertise-icon"></i>
+                    <h3>Mobile-First Design</h3>
+                    <p>Looks flawless on every screen size.</p>
+                </div>
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-shield-halved expertise-icon"></i>
+                    <h3>Trust Placement</h3>
+                    <p>Trust signals right where decisions are made.</p>
+                </div>
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-route expertise-icon"></i>
+                    <h3>Conversion Paths</h3>
+                    <p>Guiding visitors to contact you.</p>
+                </div>
+                <div class="glass-card expertise-card" data-animate>
+                    <i class="fa-solid fa-magnifying-glass-chart expertise-icon"></i>
+                    <h3>SEO-Ready Structure</h3>
+                    <p>Built for Google to read and rank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="difference">
+        <div class="container">
+            <span class="section-label">The Difference</span>
+            <h2 class="text-center">Not Just Another <span class="text-white">Website</span></h2>
+            <p class="section-subtitle">
+                Traditional agencies sell projects. Mr. Lander delivers a system. Here's what that looks like.
+            </p>
+            <div class="comparison-grid">
+                <div class="comp-col comp-ml glass-card" data-animate>
+                    <div class="recommended-badge">Recommended</div>
+                    <h3 class="text-cyan mb-1">Mr. Lander <i class="fa-solid fa-check icon-check"></i></h3>
+                    <span class="diff-tagline">Built for local business owners</span>
+                    <ul class="check-list">
+                        <li data-icon="•">Affordable setup</li>
+                        <li data-icon="•">Simple monthly service</li>
+                        <li data-icon="•">Managed hosting and updates</li>
+                        <li data-icon="•">Live in days, not months</li>
+                        <li data-icon="•">Google visibility built into every site</li>
+                        <li data-icon="•">Ongoing support after launch</li>
+                    </ul>
+                </div>
+                <div class="comp-col comp-trad glass-card" data-animate>
+                    <h3 class="text-white mb-1">Traditional Agency <i class="fa-solid fa-xmark icon-x"></i></h3>
+                    <span class="diff-tagline">The old way of doing things</span>
+                    <ul class="check-list">
+                        <li data-icon="•">Large upfront costs ($5k+)</li>
+                        <li data-icon="•">One-time project</li>
+                        <li data-icon="•">Technical responsibility falls on you</li>
+                        <li data-icon="•">Slow turnaround (weeks to months)</li>
+                        <li data-icon="•">No SEO or Google visibility included</li>
+                        <li data-icon="•">You're on your own after launch</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="who-we-serve">
+        <div class="container">
+            <span class="section-label">Who We Serve</span>
+            <h2 class="text-center">Built For Local <span class="text-white">Businesses</span></h2>
+            <p class="section-subtitle">
+                We help local service businesses establish a professional online presence that gets found and drives real growth.
+            </p>
+            <div class="comparison-grid">
+                <div class="comp-col comp-ml glass-card" data-animate>
+                    <h3 class="text-cyan mb-1">Great Fit</h3>
+                    <span class="diff-tagline">Built for your business</span>
+                    <ul class="check-list">
+                        <li data-icon="✓">Service-based businesses (HVAC, plumbing, roofing)</li>
+                        <li data-icon="✓">Local operators needing visibility</li>
+                        <li data-icon="✓">Businesses looking for managed websites</li>
+                        <li data-icon="✓">No website or an outdated one</li>
+                        <li data-icon="✓">Companies wanting predictable monthly costs</li>
+                        <li data-icon="✓">Values simplicity and speed</li>
+                    </ul>
+                </div>
+                <div class="comp-col comp-trad glass-card" data-animate>
+                    <h3 class="text-white mb-1">Not a Good Fit</h3>
+                    <span class="diff-tagline">Probably not a match</span>
+                    <ul class="check-list">
+                        <li data-icon="✗">Large e-commerce platforms (5,000+ products)</li>
+                        <li data-icon="✗">Businesses needing custom web apps</li>
+                        <li data-icon="✗">Custom software development</li>
+                        <li data-icon="✗">Needs national or multi-location reach</li>
+                        <li data-icon="✗">Wants full creative control over every detail</li>
+                        <li data-icon="✗">Unlimited design revisions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust">
+        <div class="container">
+            <span class="section-label">Trust</span>
+            <h2 class="text-center">Why Businesses Choose <span class="text-cyan">Mr. Lander</span></h2>
+            <p class="section-subtitle">
+                Built for reliability. Proven in the real world.
+            </p>
+            
+            <div class="carousel-wrapper trust-carousel-wrapper" role="region" aria-label="Trust Indicators" id="trustCarousel">
+                <div class="carousel-track trust-carousel-track">
+                    <div class="glass-card trust-card"><span>Simple process</span></div>
+                    <div class="glass-card trust-card"><span>Clear pricing</span></div>
+                    <div class="glass-card trust-card"><span>Cancel anytime</span></div>
+                    <div class="glass-card trust-card"><span>Ongoing support</span></div>
+                    <div class="glass-card trust-card"><span>Built for locals</span></div>
+                    <div class="glass-card trust-card"><span>Fast setup</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Simple process</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Clear pricing</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Cancel anytime</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Ongoing support</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Built for locals</span></div>
+                    <div class="glass-card trust-card" aria-hidden="true"><span>Fast setup</span></div>
+                </div>
+            </div>
+
+            <div class="carousel-wrapper review-carousel-wrapper" role="region" aria-label="Customer Reviews" id="reviewCarousel">
+                <div class="carousel-track review-carousel-track">
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Within two weeks of launching my site, I started getting calls from customers who said they found me on Google. Best investment I've made for my business."</p>
+                        <div class="review-author">Carlos, HVAC Contractor, Texas</div>
+                    </div>
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I used to think a website was a luxury I couldn't afford. Mr. Lander made it simple. Now I have a professional presence that brings in leads while I sleep."</p>
+                        <div class="review-author">Michelle, Salon Owner, Ohio</div>
+                    </div>
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The monthly management is the real value. I don't touch anything technical anymore. They update my hours, post photos, and my Google ranking keeps climbing."</p>
+                        <div class="review-author">David, Plumber, Florida</div>
+                    </div>
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
+                        <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
+                    </div>
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <div class="review-author">Mike, Tree Service, Virginia</div>
+                    </div>
+                    <div class="glass-card review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <div class="review-author">Sarah, Pet Groomer, Colorado</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Within two weeks of launching my site, I started getting calls from customers who said they found me on Google. Best investment I've made for my business."</p>
+                        <div class="review-author">Carlos, HVAC Contractor, Texas</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I used to think a website was a luxury I couldn't afford. Mr. Lander made it simple. Now I have a professional presence that brings in leads while I sleep."</p>
+                        <div class="review-author">Michelle, Salon Owner, Ohio</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The monthly management is the real value. I don't touch anything technical anymore. They update my hours, post photos, and my Google ranking keeps climbing."</p>
+                        <div class="review-author">David, Plumber, Florida</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I run a small cleaning business and never had a real online presence. Now people tell me they found me on Google. It’s simple and it works."</p>
+                        <div class="review-author">Lena, Cleaning Service Owner, Illinois</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I don’t have time for tech. They built the site, manage the updates, and my storm‑cleanup calls increased this season. Straightforward and reliable."</p>
+                        <div class="review-author">Mike, Tree Service, Virginia</div>
+                    </div>
+                    <div class="glass-card review-card" aria-hidden="true">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I didn’t want a complicated website project. Mr. Lander handled everything and my phone started ringing within days. Zero stress, zero tech."</p>
+                        <div class="review-author">Sarah, Pet Groomer, Colorado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container text-center">
+            <span class="section-label">Pricing</span>
+            <h2>Simple Pricing. No Surprises.</h2>
+            <p class="pricing-tagline">A professional online presence shouldn't require thousands upfront.</p>
+            <div class="pricing-grid">
+                <div class="glass-card pricing-card" data-animate>
+                    <div class="price-sub">One-Time Setup Fee</div>
+                    <div class="price-tag">$499</div>
+                    <p class="pricing-card-desc">Website build & profile optimization</p>
+                    <ul class="check-list check-list-pricing">
+                        <li data-icon="✓">Conversion-focused landing page</li>
+                        <li data-icon="✓">Mobile-responsive design</li>
+                        <li data-icon="✓">Google Business Profile setup</li>
+                        <li data-icon="✓">Professional copywriting</li>
+                        <li data-icon="✓">Basic on-page SEO</li>
+                        <li data-icon="✓">Contact form integration</li>
+                    </ul>
+                </div>
+                <div class="glass-card pricing-card" data-animate>
+                    <div class="price-sub">Monthly Management</div>
+                    <div class="price-tag">$99<span class="price-mo">/mo</span></div>
+                    <p class="pricing-card-desc">Hosting, updates, maintenance, security & support</p>
+                    <ul class="check-list check-list-pricing">
+                        <li data-icon="✓">Premium hosting & SSL</li>
+                        <li data-icon="✓">Monthly content updates</li>
+                        <li data-icon="✓">Google Profile monitoring</li>
+                        <li data-icon="✓">Security updates</li>
+                        <li data-icon="✓">Performance & analytics reporting</li>
+                        <li data-icon="✓">Priority support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container faq-container-wrap">
+            <span class="section-label">FAQ</span>
+            <h2 class="text-center">Got Questions? We Have <span class="text-cyan">Answers</span>.</h2>
+            <p class="section-subtitle">
+                No jargon. No confusion. Just clarity.
+            </p>
+            <div class="faq-container">
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        What exactly do I get with Mr. Lander?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        A professional, mobile-friendly landing page, an optimized Google Business Profile, and reliable hosting, maintenance, and security—all set up and managed for you.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        Do I have to know anything about websites or technology?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        No. You provide your business information, photos, and services—we handle the rest.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        How long does it take to get my website live?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        Once we have everything we need from you, your landing page can typically be ready within 5 business days.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        Can I make changes to my website?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        Yes. Your service includes up to two content changes each month, such as updating text, images, or business information.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        What happens if I need to cancel my monthly management?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        You can cancel your service at any time. Your Mr. Lander website and hosting remain active through the end of your current billing period, after which the service is taken offline. Your Google Business Profile and business information remain yours.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        Are there any hidden fees or setup costs?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        None. The $499 setup fee covers your entire website build and Google profile optimization. The $99/month covers all hosting, security, and ongoing support. Flat rate, transparent pricing.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        Do you offer an annual plan or yearly subscription?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        Yes. You can choose the annual plan for $1,000 per year, which works out to $83.33 per month instead of $99 — saving you $15.67 per month, or $188 (15.8%) over the year. You can switch to the annual plan at any time.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        How do I know it’s working?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        Every month, you’ll receive a simple analytics report showing how your online presence is performing, including things like website traffic and visibility. Each report also includes a “Mr. Lander’s Tip of the Month” with practical ideas to help keep your business visible and growing.
+                    </div>
+                </details>
+                <details class="faq-item" data-animate>
+                    <summary class="faq-question">
+                        What do you need from me to get started?
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </summary>
+                    <div class="faq-answer">
+                        Just basic info about your business! We need your logo (if you have one), some photos of your work, a list of your services, your service area, and your contact details. We handle the writing, layout, and technical setup.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container contact-container-wrap">
+            <span class="section-label">How To Begin</span>
+            <h2 class="text-center">Stop Being <span class="text-cyan">Invisible</span></h2>
+            <p class="contact-subtitle">
+                Your customers are searching. Make sure they find you.
+            </p>
+            <form id="contact-form" class="glass-card contact-form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Josh Custer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business/Industry</label>
+                        <input id="business" name="business" type="text" placeholder="The Tree Beaver">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input id="location" name="location" type="text" placeholder="City, State">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="owner@business.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">I am a...</label>
+                        <select id="status" name="status">
+                            <option value="new">New Customer</option>
+                            <option value="existing">Existing Client</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your business and what you need..."></textarea>
+                    </div>
+                    <div class="form-group full-width contact-submit-wrap">
+                        <button type="submit" class="btn-primary contact-submit-btn">Get Found</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <a href="#top" class="logo-link">
+                <div class="footer-brand">
+                    <img src="images/ml-favicon.png" alt="Mr. Lander Logo">
+                    <div>
+                        <div class="logo-text footer-logo-text">MR. LANDER</div>
+                        <div class="footer-tagline">
+                            <span class="logo-sub footer-sub-override">The Business Visibility Specialist</span>
+                            Helping local businesses get found, get calls, and keep growing.
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="footer-links-wrapper">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#solution">The Visibility System</a></li>
+                        <li><a href="#difference">The Difference</a></li>
+                        <li><a href="#who-we-serve">Who We Serve</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-desktop-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <details class="footer-mobile-legal">
+                <summary>Legal</summary>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </details>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-copyright">
+                    © 2026 Mr. Lander. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
