@@ -17,9 +17,6 @@
     <meta name="twitter:description" content="Professional websites and online visibility for local service businesses—without the cost, complexity, or hassle of a traditional agency.">
     <meta name="twitter:image" content="https://nefarioushippie.github.io/Mr.-Lander-Demo/images/ml-hero.png">
 
-    <!-- Security: Content Security Policy (optional - remove if it breaks anything) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
-
     <link rel="icon" type="image/png" href="images/ml-favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -66,10 +63,9 @@
                 <a href="#contact" class="btn-primary btn-desktop">
                     <i class="fa-solid fa-magnifying-glass"></i> <span>Get Found</span>
                 </a>
-                <!-- FIX: Changed div to button for accessibility -->
-                <button class="hamburger" role="button" aria-label="Toggle Navigation" aria-expanded="false" tabindex="0">
+                <div class="hamburger" role="button" aria-label="Toggle Navigation" aria-expanded="false" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
-                </button>
+                </div>
             </div>
         </div>
         <div class="mobile-menu">
@@ -98,8 +94,7 @@
             </div>
             <div class="hero-image-wrapper">
                 <div class="glow-border">
-                    <!-- FIX: Added loading="lazy" and decoding="async" for performance -->
-                    <img id="hero-mockup" src="images/ml-hero.png" alt="Mr. Lander Hologram" loading="lazy" decoding="async">
+                    <img id="hero-mockup" src="images/ml-hero.png" alt="Mr. Lander Hologram">
                 </div>
             </div>
         </div>
@@ -146,17 +141,6 @@
             <div class="radar-ring r4"></div>
             <div class="radar-cross v-line"></div>
             <div class="radar-cross h-line"></div>
-            
-            <div class="radar-blip" style="top: 15%; left: 55%; animation-delay: 0.1s;"></div>
-            <div class="radar-blip" style="top: 30%; left: 80%; animation-delay: 0.9s;"></div>
-            <div class="radar-blip" style="top: 45%; left: 95%; animation-delay: 1.4s;"></div>
-            <div class="radar-blip" style="top: 65%; left: 90%; animation-delay: 1.8s;"></div>
-            <div class="radar-blip" style="top: 85%; left: 75%; animation-delay: 2.4s;"></div>
-            <div class="radar-blip" style="top: 95%; left: 40%; animation-delay: 3.2s;"></div>
-            <div class="radar-blip" style="top: 80%; left: 15%; animation-delay: 3.8s;"></div>
-            <div class="radar-blip" style="top: 55%; left: 5%; animation-delay: 4.4s;"></div>
-            <div class="radar-blip" style="top: 25%; left: 10%; animation-delay: 5.0s;"></div>
-            <div class="radar-blip" style="top: 20%; left: 40%; animation-delay: 5.7s;"></div>
             
             <div class="radar-sweep"></div>
         </div>
@@ -560,29 +544,27 @@
             <p class="contact-subtitle">
                 Your customers are searching. Make sure they find you.
             </p>
-            <!-- FIX: Added novalidate so our JS validation handles it -->
-            <form id="contact-form" class="glass-card contact-form-card" novalidate>
+            <form id="contact-form" class="glass-card contact-form-card">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <!-- FIX: Added autocomplete for better UX -->
-                        <input id="name" name="name" type="text" placeholder="Josh Custer" required autocomplete="name">
+                        <input id="name" name="name" type="text" placeholder="Josh Custer" required>
                     </div>
                     <div class="form-group">
                         <label for="business">Business/Industry</label>
-                        <input id="business" name="business" type="text" placeholder="The Tree Beaver" autocomplete="organization">
+                        <input id="business" name="business" type="text" placeholder="The Tree Beaver">
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input id="location" name="location" type="text" placeholder="City, State" autocomplete="address-level2">
+                        <input id="location" name="location" type="text" placeholder="City, State">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" autocomplete="tel">
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="owner@business.com" required autocomplete="email">
+                        <input id="email" name="email" type="email" placeholder="owner@business.com" required>
                     </div>
                     <div class="form-group">
                         <label for="status">I am a...</label>
