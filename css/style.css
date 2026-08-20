@@ -67,12 +67,20 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Stationary Background Layer */
+/* Stationary Background Layer — WebP with PNG fallback */
 #parallax-bg {
     position: fixed;
     top: 0; left: 0;
     width: 100%; max-width: 100%; height: 100vh;
     background-image: url('../images/lander-background.png');
+    background-image: -webkit-image-set(
+        url('../images/lander-background.webp') type('image/webp'),
+        url('../images/lander-background.png') type('image/png')
+    );
+    background-image: image-set(
+        url('../images/lander-background.webp') type('image/webp'),
+        url('../images/lander-background.png') type('image/png')
+    );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -247,7 +255,7 @@ nav {
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    background: linear-gradient(to right, #9e9e9e 0%, #ffffff 20%, #9e9e9e 40%, #ffffff 60%, #9e9e9e 100%);
+    background: linear-gradient(to right, #c9cfd4 0%, #ffffff 20%, #c9cfd4 40%, #ffffff 60%, #c9cfd4 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -262,14 +270,13 @@ nav {
 
 .logo-sub { font-size: 0.65rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; display: block; }
 
-/* Mobile Center Title */
 .mobile-title {
     display: block;
     font-family: var(--font-head);
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 1px;
-    background: linear-gradient(to right, #9e9e9e 0%, #ffffff 20%, #9e9e9e 40%, #ffffff 60%, #9e9e9e 100%);
+    background: linear-gradient(to right, #c9cfd4 0%, #ffffff 20%, #c9cfd4 40%, #ffffff 60%, #c9cfd4 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -641,7 +648,25 @@ footer { border-top: 1px solid rgba(51, 224, 240, 0.1); padding-top: 2.5rem; }
 .footer-mobile-legal a:hover { color: var(--white); }
 
 .footer-bottom { border-top: 1px solid rgba(51, 224, 240, 0.05); padding: 1.25rem 0; }
-.footer-copyright { font-size: 0.75rem; opacity: 0.5; text-align: center; white-space: nowrap; }
+.footer-copyright {
+    font-size: 0.75rem;
+    color: var(--chrome);
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ============================================
+   SAFE FIX: Link underline for accessibility
+   ============================================ */
+a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--cyan);
+}
+
+a:hover {
+    color: var(--white);
+}
 
 /* ============================================
    TABLET (768px - 1023px)
